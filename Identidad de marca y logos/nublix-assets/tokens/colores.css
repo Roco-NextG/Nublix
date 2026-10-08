@@ -1,0 +1,10 @@
+:root {
+  --nublix-ink: #14161F;
+  --nublix-teal: #1F9C90;
+  --nublix-paper: #F6F4EF;
+  --nublix-mint: #E3EFEC;
+  --nublix-grey: #5B6270;
+
+  --nublix-font-display: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --nublix-font-mono: 'Space Mono', ui-monospace, monospace;
+}

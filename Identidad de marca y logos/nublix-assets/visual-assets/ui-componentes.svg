@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" >
+
+<rect x="0" y="30" width="200" height="60" rx="30" fill="#1F9C90"/>
+<text x="100" y="68" font-family="'Space Grotesk', Arial, sans-serif" font-weight="700" font-size="20" text-anchor="middle" fill="#14161F">COMENZAR</text>
+<rect x="230" y="30" width="110" height="46" rx="14" fill="#14161F"/>
+<text x="285" y="59" font-family="'Space Grotesk', Arial, sans-serif" font-weight="700" font-size="16" text-anchor="middle" fill="#1F9C90">NUEVO</text>
+<rect x="370" y="52" width="230" height="14" rx="7" fill="#14161F"/>
+<rect x="370" y="52" width="150" height="14" rx="7" fill="#1F9C90"/>
+
+</svg>

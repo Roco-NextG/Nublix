@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" >
+
+<rect x="0" y="0" width="760" height="220" rx="110" fill="#14161F"/>
+<rect x="26" y="26" width="168" height="168" rx="40" fill="#14161F" stroke="#F6F4EF" stroke-width="6"/>
+<text x="110" y="140" font-family="'Space Grotesk', Arial, sans-serif" font-weight="700" font-size="64" text-anchor="middle"><tspan fill="#1F9C90">&gt;</tspan><tspan fill="#F6F4EF">n</tspan></text>
+<text x="242" y="126" font-family="'Space Grotesk', Arial, sans-serif" font-weight="700" font-size="76" letter-spacing="-2" fill="#F6F4EF">nublix</text>
+<text x="244" y="166" font-family="'Space Mono', ui-monospace, monospace" font-weight="700" font-size="16" letter-spacing="4" fill="#F6F4EF">DIGITAL SOLUTIONS</text>
+
+</svg>
