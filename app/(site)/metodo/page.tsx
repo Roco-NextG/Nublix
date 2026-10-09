@@ -3,20 +3,23 @@ import PageHero from "@/components/PageHero";
 import MethodFull from "@/components/MethodFull";
 import Contact from "@/components/Contact";
 import SectionSeam from "@/components/system/SectionSeam";
+import { PAGES } from "@/lib/content";
+
+const page = PAGES.metodo;
 
 export const metadata: Metadata = {
-  title: "Método — nublix",
-  description:
-    "Los cuatro pasos que seguimos en cada proyecto: diagnóstico, diseño del proceso, construcción y entrega con soporte.",
+  title: page.metaTitle,
+  description: page.metaDescription,
 };
 
 export default function MetodoPage() {
   return (
     <>
       <PageHero
-        eyebrow="El método Nublix"
-        title="Cuatro pasos, siempre en este orden."
-        description="No vendemos horas de programación sueltas. Cada proyecto sigue el mismo proceso, de principio a fin — pensado para que nunca perdáis de vista qué se está construyendo ni por qué."
+        eyebrow={page.eyebrow}
+        title={page.title}
+        description={page.description}
+        seed={3}
       />
       <SectionSeam tone="onDark" />
       <MethodFull />

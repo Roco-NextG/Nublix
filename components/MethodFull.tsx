@@ -4,18 +4,42 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
-import { STEPS } from "@/lib/content";
+import { PAGES, STEPS } from "@/lib/content";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function StepPanel({ step }: { step: (typeof STEPS)[number] }) {
+function StepPanel({
+  step,
+  active = true,
+}: {
+  step: (typeof STEPS)[number];
+  active?: boolean;
+}) {
   return (
-    <article className="flex h-full flex-col border-t border-dashed border-ink/15 pt-6">
-      <span className="font-mono text-[13px] text-teal">{step.index}</span>
-      <h3 className="mt-6 text-[30px] leading-[1.05] font-medium tracking-[-0.02em] text-ink sm:text-[36px]">
+    <article className="relative flex h-full flex-col border-t border-dashed border-ink/15 pt-6">
+      <span
+        aria-hidden="true"
+        className={`absolute -top-px left-0 h-px w-full origin-left bg-teal transition-transform duration-700 ease-out-strong ${
+          active ? "scale-x-100" : "scale-x-0"
+        }`}
+      />
+      <span
+        aria-hidden="true"
+        className={`absolute -top-[4px] left-0 h-[7px] w-[7px] rounded-full border border-teal transition-[background-color,box-shadow] duration-300 ease-out-strong ${
+          active ? "bg-teal shadow-[0_0_0_5px_rgb(31_156_144/0.16)]" : "bg-paper"
+        }`}
+      />
+      <span
+        className={`font-mono text-[13px] transition-colors duration-300 ${
+          active ? "text-teal" : "text-ink/35"
+        }`}
+      >
+        {step.index}
+      </span>
+      <h3 className="mt-6 text-[30px] leading-[1.02] font-medium tracking-[-0.025em] text-ink sm:text-[40px] lg:text-[48px]">
         {step.title}
       </h3>
-      <p className="mt-4 text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">
+      <p className="mt-5 max-w-[46ch] text-[15px] leading-relaxed text-ink/65 sm:text-[17px]">
         {step.detail}
       </p>
     </article>
@@ -73,28 +97,41 @@ function PinnedMethod() {
     return () => ctx.revert();
   }, []);
 
+  const current = Math.min(STEPS.length, Math.floor(progress * STEPS.length) + 1);
+
   return (
-    <section className="bg-paper">
+    <section className="bg-paper text-ink">
       <div ref={wrapperRef} className="relative h-screen overflow-hidden">
-        <div className="mx-auto flex h-full max-w-[1240px] flex-col px-5 pt-16 pb-10 sm:px-8">
+        <div className="mx-auto flex h-full max-w-[1240px] flex-col justify-center px-5 pt-28 pb-12 sm:px-8 sm:pt-32">
+          <div className="flex items-center justify-between font-mono text-[12px] tracking-[0.06em] text-ink/45 uppercase">
+            <span>{PAGES.metodo.eyebrow}</span>
+            <span aria-hidden="true">
+              <span className="text-teal">{String(current).padStart(2, "0")}</span> /{" "}
+              {String(STEPS.length).padStart(2, "0")}
+            </span>
+          </div>
+
           <div
             ref={trackRef}
-            className="mt-10 flex flex-1 items-stretch gap-8 will-change-transform sm:mt-14 sm:gap-10 md:gap-14"
+            className="relative mt-12 flex items-stretch gap-8 will-change-transform sm:mt-16 sm:gap-10 md:gap-14"
           >
-            {STEPS.map((step) => (
+            {STEPS.map((step, i) => (
               <div
                 key={step.index}
-                className="w-[80vw] shrink-0 sm:w-[48vw] md:w-[34vw] lg:w-[26vw]"
+                className="w-[80vw] shrink-0 sm:w-[52vw] md:w-[40vw] lg:w-[30vw]"
               >
-                <StepPanel step={step} />
+                <StepPanel
+                  step={step}
+                  active={progress >= i / STEPS.length - 0.001}
+                />
               </div>
             ))}
           </div>
 
-          <div className="mt-8 h-px w-full max-w-[280px] bg-ink/10">
+          <div className="mt-14 h-px w-full max-w-[280px] bg-ink/10">
             <div
-              className="h-px bg-teal transition-[width] duration-100 ease-out"
-              style={{ width: `${Math.round(progress * 100)}%` }}
+              className="h-px origin-left bg-teal"
+              style={{ transform: `scaleX(${progress})` }}
             />
           </div>
         </div>

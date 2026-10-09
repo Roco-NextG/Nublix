@@ -2,11 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import StatusDot from "./system/StatusDot";
 import { NAV_LINKS } from "@/lib/content";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     document.documentElement.style.overflow = menuOpen ? "hidden" : "";
@@ -26,15 +31,22 @@ export default function Header() {
           <Logo />
 
           <nav className="ml-8 hidden items-center gap-7 md:flex">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-mono text-[12px] tracking-[0.05em] text-paper/65 uppercase transition-colors duration-150 ease-out hover:text-paper"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`inline-flex items-center gap-2 font-mono text-[12px] tracking-[0.05em] uppercase transition-colors duration-150 ease-out hover:text-paper ${
+                    active ? "text-paper" : "text-paper/65"
+                  }`}
+                >
+                  {active ? <StatusDot /> : null}
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <Link
@@ -76,16 +88,23 @@ export default function Header() {
       >
         <div className="overflow-hidden">
           <nav className="mt-1 flex flex-col gap-1 rounded-2xl border border-paper/10 bg-ink/90 p-3 backdrop-blur-lg">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-3 py-3 font-mono text-[13px] tracking-[0.05em] text-paper/75 uppercase transition-colors duration-150 ease-out hover:bg-paper/5 hover:text-paper"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`inline-flex items-center gap-2.5 rounded-lg px-3 py-3 font-mono text-[13px] tracking-[0.05em] uppercase transition-colors duration-150 ease-out hover:bg-paper/5 hover:text-paper ${
+                    active ? "text-paper" : "text-paper/75"
+                  }`}
+                >
+                  {active ? <StatusDot /> : null}
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href="/contacto"
               onClick={() => setMenuOpen(false)}

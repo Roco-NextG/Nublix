@@ -1,3 +1,21 @@
+# nublix — sitio web
+
+Next.js (App Router) + Tailwind v4 + GSAP/ScrollTrigger + Lenis. Ver `CLAUDE.md` para marca, dirección visual y arquitectura.
+
+## Editar textos
+
+Todo el copy del sitio en vivo está en **`lib/content.ts`**, agrupado por sección (Hero, actos del motor, Método, Servicios, FAQ, CTA final, páginas interiores, footer, email de contacto). Cambia el texto ahí; los componentes solo lo leen.
+
+## Desarrollo
+
+```bash
+npm run dev     # http://localhost:3000
+npm run build
+npm run lint
+```
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

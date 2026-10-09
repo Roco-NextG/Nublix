@@ -30,6 +30,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${spaceGrotesk.variable} ${spaceMono.variable} h-full`}
     >
       <body className="min-h-full bg-ink text-paper antialiased">
+        {/* Without JS nothing can reveal or drive the engine: show every
+            Reveal block as-is and let the pinned Hero collapse to its copy. */}
+        <noscript>
+          <style>{`[data-reveal],.reveal-stagger>*{opacity:1!important;clip-path:none!important}.hero-engine{height:auto!important}.hero-engine .engine-motion-only{display:none!important}`}</style>
+        </noscript>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-teal focus:px-5 focus:py-2.5 focus:font-mono focus:text-[13px] focus:text-ink focus:uppercase"
