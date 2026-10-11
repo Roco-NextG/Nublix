@@ -1,16 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Eyebrow from "@/components/system/Eyebrow";
 import StatusDot from "@/components/system/StatusDot";
 import TechLabel from "@/components/system/TechLabel";
 import Reveal from "@/components/system/Reveal";
+import type { Locale } from "@/lib/i18n";
 
 type Project = {
   id: string;
-  category: string;
   title: string;
-  objective: string;
+  category: Record<Locale, string>;
+  objective: Record<Locale, string>;
   tone: "ink" | "mint";
   image?: string;
 };
@@ -18,58 +20,85 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     id: "01",
-    category: "SaaS",
     title: "Coach AI",
-    objective: "Integración con Telegram.",
+    category: { es: "SaaS", en: "SaaS" },
+    objective: { es: "Integración con Telegram.", en: "Telegram integration." },
     tone: "ink",
     image: "/projects/coach-ai.png",
   },
   {
     id: "02",
-    category: "SaaS",
     title: "Retxo",
-    objective: "Gestión de alumnos para profesores online.",
+    category: { es: "SaaS", en: "SaaS" },
+    objective: {
+      es: "Gestión de alumnos para profesores online.",
+      en: "Student management for online teachers.",
+    },
     tone: "mint",
     image: "/projects/retxo.png",
   },
   {
     id: "03",
-    category: "SaaS",
     title: "DeuceUp",
-    objective: "Gestión de torneos de pádel.",
+    category: { es: "SaaS", en: "SaaS" },
+    objective: { es: "Gestión de torneos de pádel.", en: "Padel tournament management." },
     tone: "ink",
     image: "/projects/deuceup.png",
   },
   {
     id: "04",
-    category: "Solución a medida",
     title: "CClean",
-    objective: "Solución de IA para ganar productividad.",
+    category: { es: "Solución a medida", en: "Custom solution" },
+    objective: {
+      es: "Solución de IA para ganar productividad.",
+      en: "AI solution to boost productivity.",
+    },
     tone: "mint",
     image: "/projects/cclean.jpg",
   },
 ];
+
+const HEADING = {
+  eyebrow: { es: "Proyectos", en: "Projects" },
+  title: {
+    es: (
+      <>
+        Lo que <span className="text-teal">hemos construido.</span>
+      </>
+    ),
+    en: (
+      <>
+        What <span className="text-teal">we&apos;ve built.</span>
+      </>
+    ),
+  },
+  subtitle: {
+    es: "Productos propios y encargos a medida en los que hemos trabajado.",
+    en: "Our own products and custom projects we've worked on.",
+  },
+} as const;
 
 /**
  * Elastic accordion gallery — hover/tap expands a panel at the expense of
  * its siblings (flex-[4] vs flex-[1]), adapted from a community component
  * the user referenced. No stock imagery and no invented metrics/results —
  * just the real product/client name, category and objective for each.
- * Swap in a real image per project once there's one to show; the
- * interaction itself needs no changes.
+ * Screenshots render through next/image (not a raw CSS background) so
+ * they carry real alt text and are eligible for Google Images — the
+ * gradient scrim layers on top as its own absolutely-positioned div.
  */
-export default function ProjectsGallery() {
+export default function ProjectsGallery({ locale }: { locale: Locale }) {
   const [activeId, setActiveId] = useState<string>(PROJECTS[0].id);
 
   return (
     <section id="proyectos" className="scroll-mt-28 bg-paper px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">
       <Reveal>
-        <Eyebrow>Proyectos</Eyebrow>
+        <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
         <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[0.95] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
-          Lo que <span className="text-teal">hemos construido.</span>
+          {HEADING.title[locale]}
         </h2>
         <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">
-          Productos propios y encargos a medida en los que hemos trabajado.
+          {HEADING.subtitle[locale]}
         </p>
       </Reveal>
 
@@ -84,17 +113,30 @@ export default function ProjectsGallery() {
                 key={project.id}
                 onMouseEnter={() => setActiveId(project.id)}
                 onClick={() => setActiveId(project.id)}
-                className={`relative cursor-pointer overflow-hidden rounded-2xl border border-ink/15 bg-cover bg-top transition-[flex] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                className={`relative cursor-pointer overflow-hidden rounded-2xl border border-ink/15 transition-[flex] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${
                   active ? "flex-[4]" : "flex-[1]"
                 } ${dark ? "bg-ink" : "bg-mint"}`}
-                style={
-                  project.image
-                    ? {
-                        backgroundImage: `linear-gradient(to top, rgba(20,22,31,0.95), rgba(20,22,31,0.4) 45%, rgba(20,22,31,0.05) 75%), url(${project.image})`,
-                      }
-                    : undefined
-                }
               >
+                {project.image ? (
+                  <>
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} — ${project.objective[locale]}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover object-top"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(to top, rgba(20,22,31,0.95), rgba(20,22,31,0.4) 45%, rgba(20,22,31,0.05) 75%)",
+                      }}
+                    />
+                  </>
+                ) : null}
+
                 <span
                   aria-hidden="true"
                   className={`pointer-events-none absolute -bottom-6 -left-2 text-[120px] leading-none font-medium select-none transition-opacity duration-500 sm:text-[160px] ${
@@ -112,7 +154,7 @@ export default function ProjectsGallery() {
                   >
                     <div className="glass-dark inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5">
                       <StatusDot className="text-paper" />
-                      <TechLabel className="text-paper/85">{project.category}</TechLabel>
+                      <TechLabel className="text-paper/85">{project.category[locale]}</TechLabel>
                     </div>
                     <h3
                       className={`text-[24px] leading-none font-bold tracking-[-0.01em] sm:text-[30px] ${
@@ -126,7 +168,7 @@ export default function ProjectsGallery() {
                         lightText ? "text-paper/55" : "text-ink/55"
                       }`}
                     >
-                      {project.objective}
+                      {project.objective[locale]}
                     </p>
                   </div>
 

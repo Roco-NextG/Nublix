@@ -3,46 +3,62 @@ import Eyebrow from "@/components/system/Eyebrow";
 import StatusDot from "@/components/system/StatusDot";
 import Reveal from "@/components/system/Reveal";
 import { PROMISES } from "@/lib/content";
+import { CONTACT_PATH, METADATA } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Contacto — nublix",
-  description:
-    "Reservad el diagnóstico digital: 2-3 horas con vuestro equipo, un informe con quick wins y precio fijo.",
+  title: METADATA.contact.title.en,
+  description: METADATA.contact.description.en,
+  alternates: {
+    canonical: CONTACT_PATH.en,
+    languages: {
+      es: CONTACT_PATH.es,
+      en: CONTACT_PATH.en,
+      "x-default": CONTACT_PATH.es,
+    },
+  },
+  openGraph: {
+    title: METADATA.contact.title.en,
+    description: METADATA.contact.description.en,
+    url: CONTACT_PATH.en,
+    siteName: "Nublix",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const STEPS = [
   {
     index: "01",
-    title: "Contadnos cómo trabajáis hoy",
-    description: "Nos contáis cómo funciona hoy vuestro proceso.",
+    title: "Tell us how you work today",
+    description: "You tell us how your process works today.",
   },
   {
     index: "02",
-    title: "Mapeamos el proceso",
-    description: "Sesión de 2-3h con vuestro equipo, presencial o remota, para dibujarlo.",
+    title: "We map the process",
+    description: "A 2-3h session with your team, in person or remote, to map it out.",
   },
   {
     index: "03",
-    title: "Encontramos la fricción",
-    description: "Un informe con quick wins, os quedéis con nosotros o no.",
+    title: "We find the friction",
+    description: "A quick-wins report, whether you continue with us or not.",
   },
   {
     index: "04",
-    title: "Diseñamos el sistema",
-    description: "Precio fijo, cerrado antes de empezar a construir.",
+    title: "We design the system",
+    description: "Fixed price, locked in before we start building.",
   },
 ] as const;
 
-export default function ContactoPage() {
+export default function ContactPage() {
   return (
     <section className="bg-paper px-5 pt-36 pb-24 text-ink sm:px-8 sm:pt-44 sm:pb-32 lg:px-16">
       <Reveal>
-        <Eyebrow>Contacto</Eyebrow>
+        <Eyebrow>Contact</Eyebrow>
         <h1 className="mt-5 max-w-[16ch] text-[36px] leading-[0.98] font-bold tracking-[-0.02em] sm:text-[56px] lg:text-[64px]">
-          Reservemos el <span className="text-teal">diagnóstico.</span>
+          Let&apos;s book your <span className="text-teal">diagnosis.</span>
         </h1>
         <p className="mt-6 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-          Escribidnos y os proponemos fecha para la sesión de diagnóstico. Sin letra pequeña.
+          Write to us and we&apos;ll propose a date for the diagnosis session. No fine print.
         </p>
       </Reveal>
 
@@ -64,7 +80,7 @@ export default function ContactoPage() {
           </Reveal>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[12px] tracking-[0.04em] text-ink/45 uppercase">
-            {PROMISES.map((promise) => (
+            {PROMISES.en.map((promise) => (
               <li key={promise}>{promise}</li>
             ))}
           </ul>
@@ -76,10 +92,11 @@ export default function ContactoPage() {
             Status: ready
           </span>
           <h2 className="mt-6 text-[26px] leading-[1.05] font-bold tracking-[-0.01em] text-ink sm:text-[32px]">
-            Escribidnos directamente.
+            Write to us directly.
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-ink/60">
-            Contadnos en dos líneas qué os gustaría resolver. Os respondemos nosotros, no un formulario automático.
+            Tell us in a couple of lines what you&apos;d like to solve. You&apos;ll hear back from us, not an
+            automated form.
           </p>
           <a
             href="mailto:hola@nublix.com"

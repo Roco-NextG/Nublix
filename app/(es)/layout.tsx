@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import Header2 from "@/components/proposal2/Header2";
 import Footer2 from "@/components/proposal2/Footer2";
-import "./globals.css";
+import OrganizationSchema from "@/components/system/OrganizationSchema";
+import { METADATA, SITE_URL, UI } from "@/lib/i18n";
+import "../globals.css";
 
 /**
  * Inter is the site's one typeface — shadowed onto --font-space-grotesk /
@@ -11,6 +13,11 @@ import "./globals.css";
  * bakes into every compiled utility) rather than introducing new token
  * names, so every existing `font-display`/`font-mono`-driven utility class
  * just resolves to Inter without touching globals.css's theme block.
+ *
+ * This is the Spanish root layout — paired with app/en/layout.tsx as a
+ * second, independent root layout (via the (es) route group, which keeps
+ * the default locale unprefixed at `/`). Each renders its own <html lang>,
+ * which a single shared root layout can't do per-route in the App Router.
  */
 const inter = Inter({
   variable: "--font-space-grotesk",
@@ -19,9 +26,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "nublix — software a medida para pymes",
-  description:
-    "Diseñamos y construimos el software que os falta — webs, apps y herramientas internas — partiendo de vuestro proceso de negocio, no de la tecnología.",
+  metadataBase: new URL(SITE_URL),
+  title: METADATA.home.title.es,
+  description: METADATA.home.description.es,
+  alternates: {
+    canonical: "/",
+    languages: {
+      es: "/",
+      en: "/en",
+      "x-default": "/",
+    },
+  },
+  openGraph: {
+    title: METADATA.home.title.es,
+    description: METADATA.home.description.es,
+    url: "/",
+    siteName: "Nublix",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: METADATA.home.title.es,
+    description: METADATA.home.description.es,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -32,11 +60,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       style={{ "--font-space-mono": "var(--font-space-grotesk)" } as React.CSSProperties}
     >
       <body className="min-h-full bg-paper text-ink antialiased">
+        <OrganizationSchema />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-teal focus:px-5 focus:py-2.5 focus:font-mono focus:text-[13px] focus:text-ink focus:uppercase"
         >
-          Saltar al contenido
+          {UI.skipToContent.es}
         </a>
         <SmoothScrollProvider>
           <Header2 />

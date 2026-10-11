@@ -12,16 +12,16 @@ import FinalCta from "@/components/proposal2/FinalCta";
 export default function HomePage() {
   return (
     <>
-      <ScrollHero />
+      <ScrollHero locale="es" />
       <HeroWordmarkReveal />
-      <MethodEditorial />
-      <ServicesCarousel />
-      <GrowthHook />
-      <ProjectsGallery />
-      <DifferentiationStats />
-      <ObjectionsGrid />
-      <ContextGrid />
-      <FinalCta />
+      <MethodEditorial locale="es" />
+      <ServicesCarousel locale="es" />
+      <GrowthHook locale="es" />
+      <ProjectsGallery locale="es" />
+      <DifferentiationStats locale="es" />
+      <ObjectionsGrid locale="es" />
+      <ContextGrid locale="es" />
+      <FinalCta locale="es" />
     </>
   );
 }

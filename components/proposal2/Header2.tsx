@@ -8,13 +8,7 @@ import { scrollToHash } from "@/lib/lenisScrollTo";
 import NodeMark from "@/components/system/NodeMark";
 import NodeMarkLight from "./NodeMarkLight";
 import Capsule from "@/components/system/Capsule";
-
-const SECTIONS = [
-  { href: "#metodo", label: "Método" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "#dudas", label: "Dudas" },
-] as const;
+import { CONTACT_PATH, HOME_PATH, SECTIONS, UI, alternatePath, localeFromPathname } from "@/lib/i18n";
 
 /** Floating glass pill nav — one rounded capsule holding logo/nav/CTA, with
  * a real frosted-glass surface. Below `lg` it collapses to a hamburger +
@@ -27,10 +21,17 @@ const SECTIONS = [
  * The hero's background is dark there, so while it's in view the pill also
  * swaps to .glass-dark + the paper-on-ink NodeMark/text — the near-
  * transparent .glass-light surface (tuned for the paper page background)
- * would read as illegible ink-on-dark otherwise. */
+ * would read as illegible ink-on-dark otherwise.
+ *
+ * Mounted once from each locale's root layout — it reads the locale from
+ * the current pathname (/en/* vs everything else) rather than taking a
+ * prop, since the two root layouts (app/(es)/layout.tsx, app/en/layout.tsx)
+ * share this exact component. */
 export default function Header2() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const locale = localeFromPathname(pathname);
+  const homePath = HOME_PATH[locale];
+  const isHome = pathname === homePath;
   const [menuOpen, setMenuOpen] = useState(false);
   // Starts false (light pill) rather than assuming a hero is present —
   // Header2 is now mounted sitewide from the root layout, and pages
@@ -77,7 +78,7 @@ export default function Header2() {
               heroInView ? "glass-dark" : "glass-light"
             } ${menuOpen ? "rounded-b-2xl" : ""} ${heroInView ? "py-3" : "py-2"}`}
           >
-            <Link href="/" className="group flex items-center gap-2.5" aria-label="nublix — inicio">
+            <Link href={homePath} className="group flex items-center gap-2.5" aria-label={UI.logoAriaLabel[locale]}>
               <span
                 className={`block shrink-0 transition-[height,width] duration-300 ease-out group-active:scale-95 ${
                   heroInView ? "h-11 w-11 sm:h-14 sm:w-14" : "h-8 w-8"
@@ -105,7 +106,7 @@ export default function Header2() {
               {SECTIONS.map((s) => (
                 <Link
                   key={s.href}
-                  href={isHome ? s.href : `/${s.href}`}
+                  href={isHome ? s.href : `${homePath}${s.href}`}
                   onClick={
                     isHome
                       ? (e) => {
@@ -118,13 +119,22 @@ export default function Header2() {
                     heroInView ? "text-paper/85 hover:text-paper" : "text-ink/60 hover:text-ink"
                   }`}
                 >
-                  {s.label}
+                  {s.label[locale]}
                 </Link>
               ))}
             </nav>
 
+            <Link
+              href={alternatePath(pathname)}
+              className={`ml-6 hidden font-mono text-[12px] tracking-[0.05em] uppercase transition-colors duration-150 ease-out lg:block ${
+                heroInView ? "text-paper/60 hover:text-paper" : "text-ink/45 hover:text-ink"
+              }`}
+            >
+              {UI.languageSwitcherLabel[locale]}
+            </Link>
+
             <div className="ml-5 hidden lg:block">
-              <Button2 href="/contacto">Cuéntanos tu proceso</Button2>
+              <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
             </div>
 
             <button
@@ -132,7 +142,7 @@ export default function Header2() {
               onClick={() => setMenuOpen((v) => !v)}
               aria-expanded={menuOpen}
               aria-controls="propuesta2-mobile-menu"
-              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-label={menuOpen ? UI.closeMenu[locale] : UI.openMenu[locale]}
               className={`ml-2 flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-150 ease-out active:scale-95 lg:hidden ${
                 heroInView ? "hover:bg-paper/10" : "hover:bg-ink/5"
               }`}
@@ -163,7 +173,7 @@ export default function Header2() {
               {SECTIONS.map((s) => (
                 <Link
                   key={s.href}
-                  href={isHome ? s.href : `/${s.href}`}
+                  href={isHome ? s.href : `${homePath}${s.href}`}
                   onClick={
                     isHome
                       ? (e) => {
@@ -174,11 +184,18 @@ export default function Header2() {
                   }
                   className="rounded-lg px-3 py-3 font-mono text-[13px] tracking-[0.05em] text-ink/70 uppercase transition-colors duration-150 ease-out hover:bg-ink/5 hover:text-ink"
                 >
-                  {s.label}
+                  {s.label[locale]}
                 </Link>
               ))}
-              <Button2 href="/contacto" className="mt-1 justify-center" onClick={() => setMenuOpen(false)}>
-                Cuéntanos tu proceso
+              <Link
+                href={alternatePath(pathname)}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-3 py-3 font-mono text-[13px] tracking-[0.05em] text-ink/50 uppercase transition-colors duration-150 ease-out hover:bg-ink/5 hover:text-ink"
+              >
+                {UI.languageSwitcherLabel[locale]}
+              </Link>
+              <Button2 href={CONTACT_PATH[locale]} className="mt-1 justify-center" onClick={() => setMenuOpen(false)}>
+                {UI.primaryCta[locale]}
               </Button2>
             </nav>
           </div>

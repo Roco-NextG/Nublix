@@ -9,45 +9,58 @@ import TechLabel from "@/components/system/TechLabel";
 import { ChaosDiagram, MethodDiagram } from "./illustrations";
 import { scrollToHash } from "@/lib/lenisScrollTo";
 import HeroStageImages from "./HeroStageImages";
+import { CONTACT_PATH, UI, type Locale } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type Frame = {
-  tag: string;
-  title: string;
-  teal: string;
-  sub: string;
+  tag: Record<Locale, string>;
+  title: Record<Locale, string>;
+  teal: Record<Locale, string>;
+  sub: Record<Locale, string>;
   diagram: "chaos" | 2 | 3 | 4;
   cta?: boolean;
 };
 
 const FRAMES: Frame[] = [
   {
-    tag: "00 — Punto de partida",
-    title: "Hoy: Excel, papel y memoria.",
-    teal: "Excel, papel y memoria",
-    sub: "Los datos de vuestra empresa viven repartidos en media docena de sitios distintos.",
+    tag: { es: "00 — Punto de partida", en: "00 — Starting point" },
+    title: { es: "Hoy: Excel, papel y memoria.", en: "Today: Excel, paper, and memory." },
+    teal: { es: "Excel, papel y memoria", en: "Excel, paper, and memory" },
+    sub: {
+      es: "Los datos de vuestra empresa viven repartidos en media docena de sitios distintos.",
+      en: "Your company's data lives scattered across half a dozen different places.",
+    },
     diagram: "chaos",
   },
   {
-    tag: "01 — Lo que hacemos",
-    title: "Mapeamos vuestro proceso real.",
-    teal: "vuestro proceso real",
-    sub: "Antes de escribir una línea de código, entendemos cómo trabaja de verdad el equipo.",
+    tag: { es: "01 — Lo que hacemos", en: "01 — What we do" },
+    title: { es: "Mapeamos vuestro proceso real.", en: "We map your real process." },
+    teal: { es: "vuestro proceso real", en: "your real process" },
+    sub: {
+      es: "Antes de escribir una línea de código, entendemos cómo trabaja de verdad el equipo.",
+      en: "Before writing a single line of code, we understand how your team actually works.",
+    },
     diagram: 2,
   },
   {
-    tag: "02 — Cómo construimos",
-    title: "Entregas cada dos semanas.",
-    teal: "cada dos semanas",
-    sub: "Avances que podéis tocar y probar — nunca una caja negra al final.",
+    tag: { es: "02 — Cómo construimos", en: "02 — How we build" },
+    title: { es: "Entregas cada dos semanas.", en: "Deliveries every two weeks." },
+    teal: { es: "cada dos semanas", en: "every two weeks" },
+    sub: {
+      es: "Avances que podéis tocar y probar — nunca una caja negra al final.",
+      en: "Progress you can touch and test — never a black box at the end.",
+    },
     diagram: 3,
   },
   {
-    tag: "03 — El resultado",
-    title: "Un sistema a vuestra medida.",
-    teal: "a vuestra medida",
-    sub: "Software para pymes que ya crecieron más rápido que sus procesos.",
+    tag: { es: "03 — El resultado", en: "03 — The result" },
+    title: { es: "Un sistema a vuestra medida.", en: "A system built around you." },
+    teal: { es: "a vuestra medida", en: "built around you" },
+    sub: {
+      es: "Software para pymes que ya crecieron más rápido que sus procesos.",
+      en: "Software for SMEs that have already outgrown their processes.",
+    },
     diagram: 4,
     cta: true,
   },
@@ -100,44 +113,49 @@ function frameOpacity(progress: number, index: number, total: number) {
 
 /** Static, always-visible stack: the accessible default and the no-JS /
  * reduced-motion fallback. All four beats readable top to bottom, no pin,
- * nothing to animate. */
-function StaticHero() {
+ * nothing to animate. The first frame's headline doubles as the page's
+ * real, visible H1 — carrying the actual positioning copy instead of a
+ * hidden generic string, so it's both what visitors read first and what
+ * search engines read as the page's primary heading. */
+function StaticHero({ locale }: { locale: Locale }) {
   return (
     <section id="hero" className="bg-paper px-5 pt-28 pb-20 sm:px-8 lg:px-16">
-      <h1 className="sr-only">Nublix — software a medida para pymes</h1>
       <div className="flex flex-col gap-16">
-        {FRAMES.map((frame) => (
-          <div
-            key={frame.tag}
-            className="flex flex-col gap-8 border-b border-dashed border-ink/12 pb-16 last:border-b-0 last:pb-0 lg:flex-row lg:items-center lg:justify-between"
-          >
-            <div>
-              <TechLabel className="text-teal-dim">{frame.tag}</TechLabel>
-              <h2 className="mt-5 max-w-[11ch] text-[36px] leading-[0.98] font-bold tracking-[-0.03em] text-ink sm:text-[52px]">
-                <Headline title={frame.title} teal={frame.teal} />
-              </h2>
-              <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-                {frame.sub}
-              </p>
-              {frame.cta ? (
-                <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <Button2 href="/contacto">Cuéntanos tu proceso</Button2>
-                  <Button2
-                    href="#metodo"
-                    variant="ghost"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToHash("#metodo");
-                    }}
-                  >
-                    Ver el método
-                  </Button2>
-                </div>
-              ) : null}
+        {FRAMES.map((frame, i) => {
+          const HeadingTag = i === 0 ? "h1" : "h2";
+          return (
+            <div
+              key={frame.tag.es}
+              className="flex flex-col gap-8 border-b border-dashed border-ink/12 pb-16 last:border-b-0 last:pb-0 lg:flex-row lg:items-center lg:justify-between"
+            >
+              <div>
+                <TechLabel className="text-teal-dim">{frame.tag[locale]}</TechLabel>
+                <HeadingTag className="mt-5 max-w-[11ch] text-[36px] leading-[0.98] font-bold tracking-[-0.03em] text-ink sm:text-[52px]">
+                  <Headline title={frame.title[locale]} teal={frame.teal[locale]} />
+                </HeadingTag>
+                <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
+                  {frame.sub[locale]}
+                </p>
+                {frame.cta ? (
+                  <div className="mt-7 flex flex-wrap items-center gap-4">
+                    <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
+                    <Button2
+                      href="#metodo"
+                      variant="ghost"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToHash("#metodo");
+                      }}
+                    >
+                      {UI.secondaryCta[locale]}
+                    </Button2>
+                  </div>
+                ) : null}
+              </div>
+              <FrameDiagram diagram={frame.diagram} className="h-[140px] w-[190px] shrink-0 text-ink/70" />
             </div>
-            <FrameDiagram diagram={frame.diagram} className="h-[140px] w-[190px] shrink-0 text-ink/70" />
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
@@ -147,8 +165,12 @@ function StaticHero() {
  * beats as the visitor scrolls — the Oryzo "scroll through the story"
  * hero. Scroll distance is one screen height per frame; progress drives
  * opacity directly instead of per-frame tweens, mirroring the scrub +
- * onUpdate pattern already used for the pinned Método track. */
-function PinnedHero() {
+ * onUpdate pattern already used for the pinned Método track. Each frame's
+ * headline renders as an H1 only while active (the others sit at
+ * aria-hidden="true"/opacity 0), so the DOM always carries exactly one
+ * live H1 matching what's on screen, through every beat of the sequence —
+ * not just the first. */
+function PinnedHero({ locale }: { locale: Locale }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -195,16 +217,15 @@ function PinnedHero() {
         />
 
         <div className="relative flex h-full flex-col px-5 pt-28 pb-10 sm:px-8 lg:px-16">
-          <h1 className="sr-only">Nublix — software a medida para pymes</h1>
-
           <div className="relative flex flex-1 flex-col gap-10 lg:flex-row lg:items-center lg:justify-start lg:gap-12">
             <div className="relative min-h-[260px] w-full sm:min-h-[300px] lg:min-h-[360px] lg:mr-auto lg:max-w-[40%]">
               {FRAMES.map((frame, i) => {
                 const opacity = frameOpacity(progress, i, total);
                 const isActive = i === activeIndex;
+                const HeadingTag = isActive ? "h1" : "h2";
                 return (
                   <div
-                    key={frame.tag}
+                    key={frame.tag.es}
                     aria-hidden={!isActive}
                     className="absolute inset-0 flex flex-col items-start justify-center"
                     style={{
@@ -213,16 +234,16 @@ function PinnedHero() {
                       pointerEvents: isActive ? "auto" : "none",
                     }}
                   >
-                    <TechLabel className="text-teal">{frame.tag}</TechLabel>
-                    <h2 className="mt-5 max-w-[11ch] text-[40px] leading-[0.95] font-bold tracking-[-0.03em] text-paper sm:text-[64px] lg:text-[80px]">
-                      <Headline title={frame.title} teal={frame.teal} />
-                    </h2>
+                    <TechLabel className="text-teal">{frame.tag[locale]}</TechLabel>
+                    <HeadingTag className="mt-5 max-w-[11ch] text-[40px] leading-[0.95] font-bold tracking-[-0.03em] text-paper sm:text-[64px] lg:text-[80px]">
+                      <Headline title={frame.title[locale]} teal={frame.teal[locale]} />
+                    </HeadingTag>
                     <p className="mt-6 max-w-[42ch] text-[16px] leading-relaxed text-paper/70 sm:text-[19px]">
-                      {frame.sub}
+                      {frame.sub[locale]}
                     </p>
                     {frame.cta ? (
                       <div className="mt-8 flex flex-wrap items-center gap-4">
-                        <Button2 href="/contacto">Cuéntanos tu proceso</Button2>
+                        <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
                         <Button2
                           href="#metodo"
                           variant="ghost"
@@ -232,7 +253,7 @@ function PinnedHero() {
                             scrollToHash("#metodo");
                           }}
                         >
-                          Ver el método
+                          {UI.secondaryCta[locale]}
                         </Button2>
                       </div>
                     ) : null}
@@ -259,7 +280,7 @@ function PinnedHero() {
   );
 }
 
-export default function ScrollHero() {
+export default function ScrollHero({ locale }: { locale: Locale }) {
   const reducedMotion = usePrefersReducedMotion();
-  return reducedMotion ? <StaticHero /> : <PinnedHero />;
+  return reducedMotion ? <StaticHero locale={locale} /> : <PinnedHero locale={locale} />;
 }

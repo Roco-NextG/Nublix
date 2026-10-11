@@ -8,6 +8,7 @@ import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 import Eyebrow from "@/components/system/Eyebrow";
 import TechLabel from "@/components/system/TechLabel";
 import { SERVICES } from "@/lib/content";
+import type { Locale } from "@/lib/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,31 @@ const TONE_STYLES: Record<Tone, { bg: string; text: string; sub: string; circle:
   mint: { bg: "bg-mint", text: "text-ink", sub: "text-ink/60", circle: "bg-paper" },
 };
 
-function ServiceCard({ service, index }: { service: (typeof SERVICES)[number]; index: number }) {
+const HEADING = {
+  eyebrow: { es: "Servicios", en: "Services" },
+  title: {
+    es: (
+      <>
+        Siete piezas. <span className="text-teal">Un mismo sistema.</span>
+      </>
+    ),
+    en: (
+      <>
+        Seven pieces. <span className="text-teal">One system.</span>
+      </>
+    ),
+  },
+} as const;
+
+function ServiceCard({
+  service,
+  index,
+  locale,
+}: {
+  service: (typeof SERVICES)[number];
+  index: number;
+  locale: Locale;
+}) {
   const tone = TONE_STYLES[TONES[index]];
   const isFirst = index === 0;
 
@@ -43,7 +68,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[number]; i
       <div className="relative">
         <TechLabel className={tone.sub}>{service.index}</TechLabel>
         <h3 className={`mt-3 max-w-[14ch] text-[19px] leading-[1.1] font-bold tracking-[-0.01em] sm:text-[21px] ${tone.text}`}>
-          {service.title}
+          {service.title[locale]}
         </h3>
       </div>
 
@@ -59,7 +84,7 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[number]; i
       </div>
 
       <p className={`relative text-[13px] leading-snug sm:text-[14px] ${tone.sub}`}>
-        {service.description}
+        {service.description[locale]}
       </p>
     </div>
   );
@@ -68,18 +93,18 @@ function ServiceCard({ service, index }: { service: (typeof SERVICES)[number]; i
 /** Static, always-visible fallback: a plain horizontal scroll (native,
  * user-controlled), no pin, nothing to fight under prefers-reduced-motion
  * or if JS never runs. */
-function StaticServices() {
+function StaticServices({ locale }: { locale: Locale }) {
   return (
     <section id="servicios" className="scroll-mt-28 bg-paper py-16 text-ink sm:py-24">
       <div className="px-5 sm:px-8 lg:px-16">
-        <Eyebrow>Servicios</Eyebrow>
+        <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
         <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[0.95] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
-          Siete piezas. <span className="text-teal">Un mismo sistema.</span>
+          {HEADING.title[locale]}
         </h2>
       </div>
       <div className="mt-10 flex gap-3 overflow-x-auto px-5 pb-4 sm:gap-4 sm:px-8 lg:px-16">
         {SERVICES.map((service, i) => (
-          <ServiceCard key={service.index} service={service} index={i} />
+          <ServiceCard key={service.index} service={service} index={i} locale={locale} />
         ))}
       </div>
     </section>
@@ -90,7 +115,7 @@ function StaticServices() {
  * drives horizontal progress through all seven cards (same mechanism as
  * the live site's pinned Método) — the visitor can't skip past the
  * section without scrolling through every service first. */
-function PinnedServices() {
+function PinnedServices({ locale }: { locale: Locale }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -127,9 +152,9 @@ function PinnedServices() {
       <div ref={wrapperRef} className="relative h-screen overflow-hidden">
         <div className="flex h-full flex-col pt-16 pb-10 sm:pt-20">
           <div className="px-5 sm:px-8 lg:px-16">
-            <Eyebrow>Servicios</Eyebrow>
+            <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
             <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[0.95] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
-              Siete piezas. <span className="text-teal">Un mismo sistema.</span>
+              {HEADING.title[locale]}
             </h2>
           </div>
 
@@ -138,7 +163,7 @@ function PinnedServices() {
             className="mt-10 flex flex-1 items-center gap-3 pl-5 will-change-transform sm:gap-4 sm:pl-8 lg:pl-16"
           >
             {SERVICES.map((service, i) => (
-              <ServiceCard key={service.index} service={service} index={i} />
+              <ServiceCard key={service.index} service={service} index={i} locale={locale} />
             ))}
             <div aria-hidden="true" className="w-[5vw] shrink-0 sm:w-[10vw]" />
           </div>
@@ -161,7 +186,7 @@ function PinnedServices() {
   );
 }
 
-export default function ServicesCarousel() {
+export default function ServicesCarousel({ locale }: { locale: Locale }) {
   const reducedMotion = usePrefersReducedMotion();
-  return reducedMotion ? <StaticServices /> : <PinnedServices />;
+  return reducedMotion ? <StaticServices locale={locale} /> : <PinnedServices locale={locale} />;
 }

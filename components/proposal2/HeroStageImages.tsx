@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const STAGES = [
   "/hero-stages/stage-01-fragmented.png",
   "/hero-stages/stage-02-connections.png",
@@ -32,20 +34,31 @@ function frameOpacity(progress: number, index: number, total: number) {
  * the hero text. These OpenArt renders are deliberately composed with every
  * window/card packed into the right ~45% of the frame and the left half
  * left empty — so the text column (left-aligned in ScrollHero) never sits
- * on top of UI clutter without needing a heavy scrim. bg-right keeps that
- * right-weighted content anchored if a viewport is narrower than 16:9 and
- * bg-cover has to crop — cropping eats into the empty left margin first,
- * not the composition. */
+ * on top of UI clutter without needing a heavy scrim. object-right keeps
+ * that right-weighted content anchored if a viewport is narrower than 16:9
+ * and object-cover has to crop — cropping eats into the empty left margin
+ * first, not the composition.
+ *
+ * Rendered via next/image (not a CSS background) so the four ~1.3MB source
+ * PNGs get served as right-sized, modern-format (AVIF/WebP) variants
+ * instead of their full original weight — only the first frame is
+ * `priority`, since it's the one visible at first paint and the one that
+ * actually counts toward LCP. */
 export default function HeroStageImages({ progress }: { progress: number }) {
   const total = STAGES.length;
 
   return (
     <div className="absolute inset-0" aria-hidden="true">
       {STAGES.map((src, i) => (
-        <div
+        <Image
           key={src}
-          className="absolute inset-0 bg-cover bg-right"
-          style={{ backgroundImage: `url(${src})`, opacity: frameOpacity(progress, i, total) }}
+          src={src}
+          alt=""
+          fill
+          sizes="100vw"
+          priority={i === 0}
+          className="object-cover object-right"
+          style={{ opacity: frameOpacity(progress, i, total) }}
         />
       ))}
     </div>
