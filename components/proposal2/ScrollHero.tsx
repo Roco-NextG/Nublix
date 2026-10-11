@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 import Button2 from "./Button2";
 import TechLabel from "@/components/system/TechLabel";
-import { ChaosDiagram, MethodDiagram } from "@/components/proposal/illustrations";
+import { ChaosDiagram, MethodDiagram } from "./illustrations";
 import { scrollToHash } from "@/lib/lenisScrollTo";
 import HeroStageImages from "./HeroStageImages";
 

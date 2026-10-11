@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import ScrollHero from "@/components/proposal2/ScrollHero";
 import HeroWordmarkReveal from "@/components/proposal2/HeroWordmarkReveal";
 import MethodEditorial from "@/components/proposal2/MethodEditorial";
@@ -8,14 +7,9 @@ import ProjectsGallery from "@/components/proposal2/ProjectsGallery";
 import DifferentiationStats from "@/components/proposal2/DifferentiationStats";
 import ObjectionsGrid from "@/components/proposal2/ObjectionsGrid";
 import ContextGrid from "@/components/proposal2/ContextGrid";
-import FinalCta from "@/components/proposal/FinalCta";
+import FinalCta from "@/components/proposal2/FinalCta";
 
-export const metadata: Metadata = {
-  title: "nublix — propuesta v3",
-  robots: { index: false, follow: false },
-};
-
-export default function Propuesta2Page() {
+export default function HomePage() {
   return (
     <>
       <ScrollHero />

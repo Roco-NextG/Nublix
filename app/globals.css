@@ -24,31 +24,20 @@
   scrollbar-color: var(--color-teal) transparent;
 }
 
+/* The site is light top to bottom (the hero's own dark section sets its
+   own bg-ink explicitly), so html/body default to paper — otherwise iOS
+   Safari's overscroll bounce above the hero or below the footer flashes
+   whatever color is here. */
 html {
-  background: var(--color-ink);
-  color-scheme: dark;
-}
-
-body {
-  background: var(--color-ink);
-  color: var(--color-paper);
-  font-family: var(--font-display);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* /propuesta2 is light top to bottom (unlike the dark-default live site),
-   so the sitewide dark html/body wins on iOS Safari's overscroll bounce
-   above the hero or below the footer without this override. A nested
-   layout can't reach <html>/<body> directly, hence :has() keyed to the
-   route's own wrapper class (app/propuesta2/layout.tsx). */
-html:has(.propuesta2-root) {
   background: var(--color-paper);
   color-scheme: light;
 }
 
-body:has(.propuesta2-root) {
+body {
   background: var(--color-paper);
   color: var(--color-ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Visible, on-brand focus ring for every interactive element */

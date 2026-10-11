@@ -10,19 +10,15 @@ const NAV_COLUMN = [
   { href: "#dudas", label: "Dudas" },
 ] as const;
 
-const COMPANY_COLUMN = [
-  { href: "/nosotros", label: "Nosotros" },
-  { href: "/contacto", label: "Contacto" },
-] as const;
+const COMPANY_COLUMN = [{ href: "/contacto", label: "Contacto" }] as const;
 
-/** propuesta2's own footer — a full multi-column layout (nav, compañía,
+/** The site's footer — a full multi-column layout (nav, compañía,
  * contacto) closing on a copyright row, then a single massive "nublix"
  * wordmark bleeding past the content edge — the pattern studied from
  * clean-web-black1.vercel.app's footer. Deliberately just the plain name,
- * no icon/capsule/subtitle (the client asked for exactly that, not the
- * full brand lockup). Every link here is real — in-page anchors or pages
- * that exist (/nosotros, /contacto) — nothing fabricated (no socials, no
- * phone, no legal pages we don't have). */
+ * no icon/capsule/subtitle. Every link here is real — in-page anchors or
+ * pages that exist (/contacto) — nothing fabricated (no socials, no phone,
+ * no legal pages we don't have). */
 export default function Footer2() {
   return (
     <footer className="overflow-hidden border-t border-dashed border-ink/12 bg-paper pt-14 text-ink sm:pt-20">
@@ -88,13 +84,10 @@ export default function Footer2() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-dashed border-ink/12 pt-6 sm:mt-20 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 border-t border-dashed border-ink/12 pt-6 sm:mt-20">
           <span className="text-[13px] text-ink/40">
             © {new Date().getFullYear()} Nublix Digital Solutions, S.L. Todos los derechos reservados.
           </span>
-          <Link href="/" className="text-[13px] text-ink/40 transition-colors hover:text-ink/70">
-            Ver el sitio actual
-          </Link>
         </div>
       </div>
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button2 from "./Button2";
 import { scrollToHash } from "@/lib/lenisScrollTo";
 import NodeMark from "@/components/system/NodeMark";
@@ -15,23 +16,27 @@ const SECTIONS = [
   { href: "#dudas", label: "Dudas" },
 ] as const;
 
-/** Floating glass pill nav — mirrors the live site's Header.tsx shape (one
- * rounded capsule holding logo/nav/CTA), with a real frosted-glass surface.
- * Below `lg` it collapses to a hamburger + dropdown instead of silently
- * dropping nav and CTA.
+/** Floating glass pill nav — one rounded capsule holding logo/nav/CTA, with
+ * a real frosted-glass surface. Below `lg` it collapses to a hamburger +
+ * dropdown instead of silently dropping nav and CTA.
  *
- * The logo starts large (matching the client's reference lockup) while the
- * pinned hero (#hero) is still in view, then shrinks to a normal nav-sized
- * mark once the visitor scrolls past it — tracked via IntersectionObserver
- * on the hero section rather than a scroll-position threshold, so it stays
- * correct regardless of viewport height or how many hero frames there are.
- * The hero is now a full-bleed dark video, so while it's in view the pill
- * also swaps to .glass-dark + the paper-on-ink NodeMark/text — the near-
+ * The logo starts large while the hero (#hero, then #hero-wordmark) is
+ * still in view, then shrinks to a normal nav-sized mark once the visitor
+ * scrolls past — tracked via IntersectionObserver rather than a scroll-
+ * position threshold, so it stays correct regardless of viewport height.
+ * The hero's background is dark there, so while it's in view the pill also
+ * swaps to .glass-dark + the paper-on-ink NodeMark/text — the near-
  * transparent .glass-light surface (tuned for the paper page background)
- * would read as illegible ink-on-video otherwise. */
+ * would read as illegible ink-on-dark otherwise. */
 export default function Header2() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [menuOpen, setMenuOpen] = useState(false);
-  const [heroInView, setHeroInView] = useState(true);
+  // Starts false (light pill) rather than assuming a hero is present —
+  // Header2 is now mounted sitewide from the root layout, and pages
+  // without #hero/#hero-wordmark (e.g. /contacto) never get an
+  // IntersectionObserver callback to correct an optimistic `true` default.
+  const [heroInView, setHeroInView] = useState(false);
 
   useEffect(() => {
     document.documentElement.style.overflow = menuOpen ? "hidden" : "";
@@ -96,29 +101,25 @@ export default function Header2() {
               </span>
             </Link>
 
-            <span
-              className={`ml-3 hidden items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[11px] tracking-[0.08em] uppercase lg:inline-flex ${
-                heroInView ? "bg-paper/10 text-paper/60" : "bg-ink/[0.06] text-ink/50"
-              }`}
-            >
-              Propuesta · v3
-            </span>
-
             <nav className="ml-7 hidden items-center gap-6 lg:flex">
               {SECTIONS.map((s) => (
-                <a
+                <Link
                   key={s.href}
-                  href={s.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(s.href);
-                  }}
+                  href={isHome ? s.href : `/${s.href}`}
+                  onClick={
+                    isHome
+                      ? (e) => {
+                          e.preventDefault();
+                          handleNavClick(s.href);
+                        }
+                      : undefined
+                  }
                   className={`font-mono text-[12px] tracking-[0.05em] uppercase transition-colors duration-150 ease-out ${
                     heroInView ? "text-paper/70 hover:text-paper" : "text-ink/60 hover:text-ink"
                   }`}
                 >
                   {s.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -160,28 +161,25 @@ export default function Header2() {
           <div className="overflow-hidden">
             <nav className="mt-1 flex flex-col gap-1 rounded-2xl border border-ink/10 bg-paper/95 p-3 shadow-[0_10px_30px_rgba(20,22,31,0.12)] backdrop-blur-xl">
               {SECTIONS.map((s) => (
-                <a
+                <Link
                   key={s.href}
-                  href={s.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(s.href);
-                  }}
+                  href={isHome ? s.href : `/${s.href}`}
+                  onClick={
+                    isHome
+                      ? (e) => {
+                          e.preventDefault();
+                          handleNavClick(s.href);
+                        }
+                      : () => setMenuOpen(false)
+                  }
                   className="rounded-lg px-3 py-3 font-mono text-[13px] tracking-[0.05em] text-ink/70 uppercase transition-colors duration-150 ease-out hover:bg-ink/5 hover:text-ink"
                 >
                   {s.label}
-                </a>
+                </Link>
               ))}
               <Button2 href="/contacto" className="mt-1 justify-center" onClick={() => setMenuOpen(false)}>
                 Cuéntanos tu proceso
               </Button2>
-              <Link
-                href="/propuesta"
-                onClick={() => setMenuOpen(false)}
-                className="mt-1 px-3 py-2 text-center font-mono text-[11px] tracking-[0.05em] text-ink/40 uppercase"
-              >
-                Ver propuesta v2
-              </Link>
             </nav>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import ArrowButton from "@/components/system/ArrowButton";
+import Button2 from "./Button2";
 import TechLabel from "@/components/system/TechLabel";
 import Reveal from "@/components/system/Reveal";
 
@@ -16,10 +16,7 @@ export default function FinalCta() {
           Una sesión de 2-3h. Precio fijo. Sin permanencia ni letra pequeña.
         </p>
         <div className="mt-9 flex flex-wrap items-center gap-4">
-          <ArrowButton href="/contacto">Cuéntanos tu proceso</ArrowButton>
-          <ArrowButton href="/" variant="ghost">
-            Ver el sitio actual
-          </ArrowButton>
+          <Button2 href="/contacto">Cuéntanos tu proceso</Button2>
         </div>
       </Reveal>
     </section>
