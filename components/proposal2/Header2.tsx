@@ -115,7 +115,7 @@ export default function Header2() {
                       : undefined
                   }
                   className={`font-mono text-[12px] tracking-[0.05em] uppercase transition-colors duration-150 ease-out ${
-                    heroInView ? "text-paper/70 hover:text-paper" : "text-ink/60 hover:text-ink"
+                    heroInView ? "text-paper/85 hover:text-paper" : "text-ink/60 hover:text-ink"
                   }`}
                 >
                   {s.label}
