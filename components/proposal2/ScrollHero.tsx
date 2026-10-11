@@ -8,7 +8,7 @@ import Button2 from "./Button2";
 import TechLabel from "@/components/system/TechLabel";
 import { ChaosDiagram, MethodDiagram } from "@/components/proposal/illustrations";
 import { scrollToHash } from "@/lib/lenisScrollTo";
-import HeroScrubVideo from "./HeroScrubVideo";
+import HeroStageImages from "./HeroStageImages";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -178,61 +178,68 @@ function PinnedHero() {
 
   return (
     <section id="hero" ref={wrapperRef} className="relative bg-ink" style={{ height: `${total * 100}vh` }}>
-      <div ref={pinRef} className="relative h-screen w-full overflow-hidden">
-        <h1 className="sr-only">Nublix — software a medida para pymes</h1>
-
-        <HeroScrubVideo progress={progress} />
+      <div ref={pinRef} className="relative h-screen w-full overflow-hidden bg-ink">
+        <HeroStageImages progress={progress} />
+        {/* Below lg the text column spans the full width (no empty left
+            zone to sit in), so the image needs a flat scrim everywhere
+            rather than the directional one — otherwise text lands directly
+            on top of the right-weighted illustration instead of beside it. */}
+        <div aria-hidden="true" className="absolute inset-0 bg-ink/75 lg:hidden" />
         <div
           aria-hidden="true"
-          className="absolute inset-0"
+          className="absolute inset-0 hidden lg:block"
           style={{
             background:
-              "linear-gradient(to right, rgba(20,22,31,0.88), rgba(20,22,31,0.5) 50%, rgba(20,22,31,0.18))",
+              "linear-gradient(to left, rgba(20,22,31,0) 0%, rgba(20,22,31,0.45) 40%, rgba(20,22,31,0.88) 62%, rgba(20,22,31,0.88) 100%)",
           }}
         />
 
         <div className="relative flex h-full flex-col px-5 pt-28 pb-10 sm:px-8 lg:px-16">
-          <div className="relative min-h-[260px] w-full flex-1 sm:min-h-[300px] lg:min-h-[360px] lg:max-w-[52%]">
-            {FRAMES.map((frame, i) => {
-              const opacity = frameOpacity(progress, i, total);
-              const isActive = i === activeIndex;
-              return (
-                <div
-                  key={frame.tag}
-                  aria-hidden={!isActive}
-                  className="absolute inset-0 flex flex-col items-start justify-center"
-                  style={{
-                    opacity,
-                    transform: `translateY(${(1 - opacity) * 36}px)`,
-                    pointerEvents: isActive ? "auto" : "none",
-                  }}
-                >
-                  <TechLabel className="text-teal">{frame.tag}</TechLabel>
-                  <h2 className="mt-5 max-w-[11ch] text-[40px] leading-[0.95] font-bold tracking-[-0.03em] text-paper sm:text-[64px] lg:text-[80px]">
-                    <Headline title={frame.title} teal={frame.teal} />
-                  </h2>
-                  <p className="mt-6 max-w-[42ch] text-[16px] leading-relaxed text-paper/70 sm:text-[19px]">
-                    {frame.sub}
-                  </p>
-                  {frame.cta ? (
-                    <div className="mt-8 flex flex-wrap items-center gap-4">
-                      <Button2 href="/contacto">Cuéntanos tu proceso</Button2>
-                      <Button2
-                        href="#metodo"
-                        variant="ghost"
-                        className="!text-paper/80 hover:!text-paper"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToHash("#metodo");
-                        }}
-                      >
-                        Ver el método
-                      </Button2>
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
+          <h1 className="sr-only">Nublix — software a medida para pymes</h1>
+
+          <div className="relative flex flex-1 flex-col gap-10 lg:flex-row lg:items-center lg:justify-start lg:gap-12">
+            <div className="relative min-h-[260px] w-full sm:min-h-[300px] lg:min-h-[360px] lg:mr-auto lg:max-w-[40%]">
+              {FRAMES.map((frame, i) => {
+                const opacity = frameOpacity(progress, i, total);
+                const isActive = i === activeIndex;
+                return (
+                  <div
+                    key={frame.tag}
+                    aria-hidden={!isActive}
+                    className="absolute inset-0 flex flex-col items-start justify-center"
+                    style={{
+                      opacity,
+                      transform: `translateY(${(1 - opacity) * 36}px)`,
+                      pointerEvents: isActive ? "auto" : "none",
+                    }}
+                  >
+                    <TechLabel className="text-teal">{frame.tag}</TechLabel>
+                    <h2 className="mt-5 max-w-[11ch] text-[40px] leading-[0.95] font-bold tracking-[-0.03em] text-paper sm:text-[64px] lg:text-[80px]">
+                      <Headline title={frame.title} teal={frame.teal} />
+                    </h2>
+                    <p className="mt-6 max-w-[42ch] text-[16px] leading-relaxed text-paper/70 sm:text-[19px]">
+                      {frame.sub}
+                    </p>
+                    {frame.cta ? (
+                      <div className="mt-8 flex flex-wrap items-center gap-4">
+                        <Button2 href="/contacto">Cuéntanos tu proceso</Button2>
+                        <Button2
+                          href="#metodo"
+                          variant="ghost"
+                          className="!text-paper/80 hover:!text-paper"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            scrollToHash("#metodo");
+                          }}
+                        >
+                          Ver el método
+                        </Button2>
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           <div className="relative mt-6 flex items-center gap-4">

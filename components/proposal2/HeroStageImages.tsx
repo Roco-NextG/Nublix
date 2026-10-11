@@ -1,10 +1,10 @@
 "use client";
 
 const STAGES = [
-  "/hero-stages/stage-fragmented.png",
-  "/hero-stages/stage-problem.png",
-  "/hero-stages/stage-connections.png",
-  "/hero-stages/stage-dashboard.png",
+  "/hero-stages/stage-01-fragmented.png",
+  "/hero-stages/stage-02-connections.png",
+  "/hero-stages/stage-03-build.png",
+  "/hero-stages/stage-04-dashboard.png",
 ] as const;
 
 /** Mirrors ScrollHero's own frameOpacity exactly, duplicated locally so this
@@ -28,21 +28,23 @@ function frameOpacity(progress: number, index: number, total: number) {
   return 0;
 }
 
-/** Static illustration per hero frame, crossfaded on the same progress/
- * timing as the hero text — replaces the earlier code-drawn scroll
- * animation (DashboardScrollVisual) with the client's own illustrated
- * stages (public/hero-stages/*.png — cropped from their mockup, text
- * removed, nothing else altered). */
+/** Full-bleed hero background, crossfaded per stage on the same progress as
+ * the hero text. These OpenArt renders are deliberately composed with every
+ * window/card packed into the right ~45% of the frame and the left half
+ * left empty — so the text column (left-aligned in ScrollHero) never sits
+ * on top of UI clutter without needing a heavy scrim. bg-right keeps that
+ * right-weighted content anchored if a viewport is narrower than 16:9 and
+ * bg-cover has to crop — cropping eats into the empty left margin first,
+ * not the composition. */
 export default function HeroStageImages({ progress }: { progress: number }) {
   const total = STAGES.length;
 
   return (
-    <div className="relative h-[280px] w-[320px] shrink-0 sm:h-[360px] sm:w-[440px] lg:h-[420px] lg:w-[540px]">
+    <div className="absolute inset-0" aria-hidden="true">
       {STAGES.map((src, i) => (
         <div
           key={src}
-          aria-hidden="true"
-          className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-right"
           style={{ backgroundImage: `url(${src})`, opacity: frameOpacity(progress, i, total) }}
         />
       ))}
