@@ -1,9 +1,9 @@
 import { renderOgImage, ogImageSize, ogImageContentType } from "@/lib/ogImage";
 
-export const alt = "Nublix — custom software for SMEs";
+export const alt = "Nublix: custom software for businesses";
 export const size = ogImageSize;
 export const contentType = ogImageContentType;
 
 export default function Image() {
-  return renderOgImage("Custom software for SMEs that have outgrown their processes.");
+  return renderOgImage("Custom software for businesses that have outgrown their processes.");
 }

@@ -5,15 +5,15 @@ import { usePathname } from "next/navigation";
 import StatusDot from "@/components/system/StatusDot";
 import TechLabel from "@/components/system/TechLabel";
 import { PROMISES } from "@/lib/content";
-import { CONTACT_PATH, HOME_PATH, SECTIONS, UI, localeFromPathname } from "@/lib/i18n";
+import { CONTACT_PATH, COOKIES_PATH, HOME_PATH, PRIVACY_PATH, SECTIONS, UI, localeFromPathname } from "@/lib/i18n";
 
 /** The site's footer — a full multi-column layout (nav, compañía,
  * contacto) closing on a copyright row, then a single massive "nublix"
  * wordmark bleeding past the content edge — the pattern studied from
  * clean-web-black1.vercel.app's footer. Deliberately just the plain name,
  * no icon/capsule/subtitle. Every link here is real — in-page anchors or
- * pages that exist (/contacto, /en/contact) — nothing fabricated (no
- * socials, no phone, no legal pages we don't have).
+ * pages that exist (/contacto, /en/contact, /privacidad, /cookies) —
+ * nothing fabricated (no socials, no phone).
  *
  * Reads locale from the pathname like Header2, since both root layouts
  * mount the same component. */
@@ -90,10 +90,22 @@ export default function Footer2() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-dashed border-ink/12 pt-6 sm:mt-20">
+        <div className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-dashed border-ink/12 pt-6 sm:mt-20">
           <span className="text-[13px] text-ink/40">
             © {new Date().getFullYear()} {UI.footerCopyright[locale]}
           </span>
+          <Link
+            href={PRIVACY_PATH[locale]}
+            className="text-[13px] text-ink/40 underline-offset-2 transition-colors hover:text-ink hover:underline"
+          >
+            {UI.footerPrivacyLink[locale]}
+          </Link>
+          <Link
+            href={COOKIES_PATH[locale]}
+            className="text-[13px] text-ink/40 underline-offset-2 transition-colors hover:text-ink hover:underline"
+          >
+            {UI.footerCookiesLink[locale]}
+          </Link>
         </div>
       </div>
 

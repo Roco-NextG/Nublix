@@ -64,7 +64,7 @@ export const SERVICES: LocalizedService[] = [
     },
     detail: {
       es: "Sustituimos la hoja de cálculo que solo entiende una persona por un panel compartido: pedidos, stock, producción o lo que gestionéis hoy a mano, con permisos por rol y datos siempre actualizados.",
-      en: "We replace the spreadsheet only one person understands with a shared dashboard: orders, stock, production, or whatever you manage by hand today — with role-based permissions and always-current data.",
+      en: "We replace the spreadsheet only one person understands with a shared dashboard: orders, stock, production, or whatever you manage by hand today, with role-based permissions and always-current data.",
     },
   },
   {
@@ -72,12 +72,12 @@ export const SERVICES: LocalizedService[] = [
     icon: "automatizacion",
     title: { es: "Automatización de procesos", en: "Process automation" },
     description: {
-      es: "Lo que hoy hacéis a mano —copiar datos, mandar el mismo email, revisar hojas— pasa a hacerse solo.",
-      en: "What you do by hand today — copying data, sending the same email, checking spreadsheets — starts happening on its own.",
+      es: "Lo que hoy hacéis a mano (copiar datos, mandar el mismo email, revisar hojas) pasa a hacerse solo.",
+      en: "What you do by hand today (copying data, sending the same email, checking spreadsheets) starts happening on its own.",
     },
     detail: {
-      es: "Identificamos las tareas repetitivas que se comen horas cada semana —copiar entre hojas, mandar el mismo correo, revisar manualmente— y las convertimos en procesos automáticos con alertas cuando algo necesita a una persona.",
-      en: "We find the repetitive tasks eating hours every week — copying between sheets, sending the same email, manual checks — and turn them into automatic processes, with alerts when something actually needs a person.",
+      es: "Identificamos las tareas repetitivas que se comen horas cada semana (copiar entre hojas, mandar el mismo correo, revisar manualmente) y las convertimos en procesos automáticos con alertas cuando algo necesita a una persona.",
+      en: "We find the repetitive tasks eating hours every week (copying between sheets, sending the same email, manual checks) and turn them into automatic processes, with alerts when something actually needs a person.",
     },
   },
   {
@@ -89,8 +89,8 @@ export const SERVICES: LocalizedService[] = [
       en: "We bring your ERP, website, and that one spreadsheet into a single place, with no duplicated work.",
     },
     detail: {
-      es: "Conectamos las herramientas que ya usáis —ERP, web, facturación, ese Excel que nadie quiere tocar— para que los datos viajen solos entre sistemas, sin que nadie tenga que teclearlos dos veces.",
-      en: "We connect the tools you already use — ERP, website, invoicing, that spreadsheet nobody wants to touch — so data moves between systems on its own, without anyone typing it twice.",
+      es: "Conectamos las herramientas que ya usáis (ERP, web, facturación, ese Excel que nadie quiere tocar) para que los datos viajen solos entre sistemas, sin que nadie tenga que teclearlos dos veces.",
+      en: "We connect the tools you already use (ERP, website, invoicing, that spreadsheet nobody wants to touch) so data moves between systems on its own, without anyone typing it twice.",
     },
   },
   {
@@ -103,7 +103,7 @@ export const SERVICES: LocalizedService[] = [
     },
     detail: {
       es: "Diseñamos y construimos desde la web que os representa hasta la app interna que necesita el equipo de producción o comercial, siempre partiendo del proceso real, no de una plantilla genérica.",
-      en: "We design and build everything from the website that represents you to the internal app your production or sales team needs — always starting from the real process, never a generic template.",
+      en: "We design and build everything from the website that represents you to the internal app your production or sales team needs, always starting from the real process, never a generic template.",
     },
   },
   {
@@ -141,8 +141,8 @@ export const SERVICES: LocalizedService[] = [
       en: "Sensors on your floor, machinery, or fleet that feed your dashboard in real time.",
     },
     detail: {
-      es: "Conectamos sensores y dispositivos —temperatura, maquinaria, flota, stock— directamente a vuestro panel, para sustituir el registro manual por datos en tiempo real.",
-      en: "We connect sensors and devices — temperature, machinery, fleet, stock — directly to your dashboard, replacing manual logging with real-time data.",
+      es: "Conectamos sensores y dispositivos (temperatura, maquinaria, flota, stock) directamente a vuestro panel, para sustituir el registro manual por datos en tiempo real.",
+      en: "We connect sensors and devices (temperature, machinery, fleet, stock) directly to your dashboard, replacing manual logging with real-time data.",
     },
   },
 ];

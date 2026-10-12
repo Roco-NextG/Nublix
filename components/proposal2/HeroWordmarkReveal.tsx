@@ -67,7 +67,11 @@ export default function HeroWordmarkReveal() {
                 be its own teal-colored element instead of inheriting the
                 glyph's own paper-colored dot. */}
             ı
-            <span className="absolute bottom-[0.747em] left-1/2 h-[0.17em] w-[0.17em] -translate-x-1/2 rounded-full bg-teal" />
+            {/* Centered on the ı glyph's own ink (measured via canvas
+                actualBoundingBoxLeft/Right), not the wider advance box —
+                the glyph's side bearings aren't symmetric, so centering on
+                the box alone sits the dot visibly right of the stem. */}
+            <span className="absolute bottom-[0.747em] left-[calc(50%-0.05em)] h-[0.17em] w-[0.17em] -translate-x-1/2 rounded-full bg-teal" />
           </span>
           x
         </h2>

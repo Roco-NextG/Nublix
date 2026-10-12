@@ -24,7 +24,7 @@ type Frame = {
 
 const FRAMES: Frame[] = [
   {
-    tag: { es: "00 — Punto de partida", en: "00 — Starting point" },
+    tag: { es: "00. Punto de partida", en: "00. Starting point" },
     title: { es: "Hoy: Excel, papel y memoria.", en: "Today: Excel, paper, and memory." },
     teal: { es: "Excel, papel y memoria", en: "Excel, paper, and memory" },
     sub: {
@@ -34,7 +34,7 @@ const FRAMES: Frame[] = [
     diagram: "chaos",
   },
   {
-    tag: { es: "01 — Lo que hacemos", en: "01 — What we do" },
+    tag: { es: "01. Lo que hacemos", en: "01. What we do" },
     title: { es: "Mapeamos vuestro proceso real.", en: "We map your real process." },
     teal: { es: "vuestro proceso real", en: "your real process" },
     sub: {
@@ -44,22 +44,22 @@ const FRAMES: Frame[] = [
     diagram: 2,
   },
   {
-    tag: { es: "02 — Cómo construimos", en: "02 — How we build" },
+    tag: { es: "02. Cómo construimos", en: "02. How we build" },
     title: { es: "Entregas cada dos semanas.", en: "Deliveries every two weeks." },
     teal: { es: "cada dos semanas", en: "every two weeks" },
     sub: {
-      es: "Avances que podéis tocar y probar — nunca una caja negra al final.",
-      en: "Progress you can touch and test — never a black box at the end.",
+      es: "Avances que podéis tocar y probar, nunca una caja negra al final.",
+      en: "Progress you can touch and test, never a black box at the end.",
     },
     diagram: 3,
   },
   {
-    tag: { es: "03 — El resultado", en: "03 — The result" },
+    tag: { es: "03. El resultado", en: "03. The result" },
     title: { es: "Un sistema a vuestra medida.", en: "A system built around you." },
     teal: { es: "a vuestra medida", en: "built around you" },
     sub: {
-      es: "Software para pymes que ya crecieron más rápido que sus procesos.",
-      en: "Software for SMEs that have already outgrown their processes.",
+      es: "Software para empresas que ya crecieron más rápido que sus procesos.",
+      en: "Software for businesses that have already outgrown their processes.",
     },
     diagram: 4,
     cta: true,

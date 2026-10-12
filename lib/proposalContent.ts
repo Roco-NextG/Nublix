@@ -23,8 +23,8 @@ export const METHOD_STEPS: LocalizedStep[] = [
     title: { es: "Diagnóstico", en: "Diagnosis" },
     lead: { es: "2-3h con tu equipo. Precio fijo.", en: "2-3h with your team. Fixed price." },
     description: {
-      es: "Nos sentamos contigo y tu equipo para entender cómo trabajáis hoy, dónde se pierde el tiempo y qué datos necesitas de verdad. Sales con un informe de mejoras rápidas y una hoja de ruta — aunque no sigas con nosotros.",
-      en: "We sit down with you and your team to understand how you work today, where time gets lost, and what data you actually need. You walk away with a quick-wins report and a roadmap — even if you don't continue with us.",
+      es: "Nos sentamos contigo y tu equipo para entender cómo trabajáis hoy, dónde se pierde el tiempo y qué datos necesitas de verdad. Sales con un informe de mejoras rápidas y una hoja de ruta, aunque no sigas con nosotros.",
+      en: "We sit down with you and your team to understand how you work today, where time gets lost, and what data you actually need. You walk away with a quick-wins report and a roadmap, even if you don't continue with us.",
     },
   },
   {
@@ -107,15 +107,15 @@ export const OBJECTIONS: LocalizedObjection[] = [
       en: "I already tried a freelancer or agency and it went badly",
     },
     description: {
-      es: "Precio cerrado, entregas visibles cada dos semanas, y código y documentación tuyos desde el primer día — no desde el final del proyecto.",
-      en: "Fixed price, visible deliveries every two weeks, and your code and documentation are yours from day one — not just at the end of the project.",
+      es: "Precio cerrado, entregas visibles cada dos semanas, y código y documentación tuyos desde el primer día, no desde el final del proyecto.",
+      en: "Fixed price, visible deliveries every two weeks, and your code and documentation are yours from day one, not just at the end of the project.",
     },
   },
   {
     index: "04",
     title: {
       es: "Sois una empresa pequeña, ¿y si desaparecéis?",
-      en: "You're a small company — what if you disappear?",
+      en: "You're a small company. What if you disappear?",
     },
     description: {
       es: "Somos tres socios, con documentación completa y un contrato de mantenimiento. No dependéis de una sola persona para que la herramienta siga funcionando.",
@@ -125,8 +125,8 @@ export const OBJECTIONS: LocalizedObjection[] = [
   {
     index: "05",
     title: {
-      es: "Mi equipo no va a usar una herramienta nueva — ya lo intentamos",
-      en: "My team won't use a new tool — we've tried before",
+      es: "Mi equipo no va a usar una herramienta nueva. Ya lo intentamos",
+      en: "My team won't use a new tool. We've tried before",
     },
     description: {
       es: "Diseñamos con quien va a usarla desde el primer día, no después. Una herramienta pensada para quien la usa, se usa.",
@@ -137,15 +137,15 @@ export const OBJECTIONS: LocalizedObjection[] = [
 
 export const MARKET_CONTEXT: Record<Locale, string[]> = {
   es: [
-    "La facturación electrónica obligatoria (Verifactu, Ley Crea y Crece) está empujando a las pymes a revisar cómo gestionan sus datos.",
-    "Las ayudas del Kit Digital se han ido cerrando — muchas pymes se quedaron con una web o un CRM genérico que no resolvió el fondo del problema.",
+    "La facturación electrónica obligatoria (Verifactu, Ley Crea y Crece) está empujando a las empresas a revisar cómo gestionan sus datos.",
+    "Las ayudas del Kit Digital se han ido cerrando, y muchas empresas se quedaron con una web o un CRM genérico que no resolvió el fondo del problema.",
     "La IA está en boca de todos, pero la mayoría de gerentes no sabe por dónde empezar ni en quién confiar.",
-    "Cuesta encontrar y retener talento — lo que hace más valioso automatizar las tareas repetitivas que nadie quiere hacer.",
+    "Cuesta encontrar y retener talento, lo que hace más valioso automatizar las tareas repetitivas que nadie quiere hacer.",
   ],
   en: [
-    "Mandatory e-invoicing (Verifactu, Spain's Crea y Crece law) is pushing SMEs to rethink how they manage their data.",
-    "Spain's Kit Digital grants have been winding down — many SMEs were left with a generic website or CRM that never solved the real problem.",
+    "Mandatory e-invoicing (Verifactu, Spain's Crea y Crece law) is pushing businesses to rethink how they manage their data.",
+    "Spain's Kit Digital grants have been winding down, and many businesses were left with a generic website or CRM that never solved the real problem.",
     "AI is on everyone's lips, but most owners don't know where to start or who to trust.",
-    "Finding and keeping talent is hard — which makes it more valuable to automate the repetitive tasks nobody wants to do.",
+    "Finding and keeping talent is hard, which makes it more valuable to automate the repetitive tasks nobody wants to do.",
   ],
 };

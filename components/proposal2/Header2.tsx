@@ -39,6 +39,16 @@ export default function Header2() {
   // without #hero/#hero-wordmark (e.g. /contacto) never get an
   // IntersectionObserver callback to correct an optimistic `true` default.
   const [heroInView, setHeroInView] = useState(false);
+  // Resets the moment `pathname` changes (during render, not in an effect —
+  // see https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes)
+  // to a safe default before the observer effect below has a chance to run,
+  // since Header2 never remounts across client-side navigation and would
+  // otherwise carry the previous page's heroInView value into the new one.
+  const [trackedPathname, setTrackedPathname] = useState(pathname);
+  if (pathname !== trackedPathname) {
+    setTrackedPathname(pathname);
+    setHeroInView(false);
+  }
 
   useEffect(() => {
     document.documentElement.style.overflow = menuOpen ? "hidden" : "";
@@ -48,6 +58,13 @@ export default function Header2() {
   }, [menuOpen]);
 
   useEffect(() => {
+    // Re-runs on every route change (not just on mount) because Header2
+    // lives in the root layout and never remounts across client-side
+    // navigation — without the `pathname` dependency, the observer set up
+    // on one page keeps watching that page's (now-unmounted) targets
+    // instead of the new page's. The render-phase reset above already
+    // covers pages with no hero at all; this only needs to attach a fresh
+    // observer when one exists.
     const targets = ["hero", "hero-wordmark"]
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -63,7 +80,7 @@ export default function Header2() {
     );
     targets.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);

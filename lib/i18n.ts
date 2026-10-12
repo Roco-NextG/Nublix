@@ -20,6 +20,16 @@ export const CONTACT_PATH: Record<Locale, string> = {
   en: "/en/contact",
 };
 
+export const PRIVACY_PATH: Record<Locale, string> = {
+  es: "/privacidad",
+  en: "/en/privacy",
+};
+
+export const COOKIES_PATH: Record<Locale, string> = {
+  es: "/cookies",
+  en: "/en/cookies",
+};
+
 /** Derives the current locale from a Next.js pathname (usePathname()). */
 export function localeFromPathname(pathname: string): Locale {
   return pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
@@ -36,20 +46,16 @@ export function alternatePath(pathname: string): string {
 
 export const UI = {
   skipToContent: { es: "Saltar al contenido", en: "Skip to content" },
-  logoAriaLabel: { es: "nublix — inicio", en: "nublix — home" },
+  logoAriaLabel: { es: "nublix, inicio", en: "nublix, home" },
   openMenu: { es: "Abrir menú", en: "Open menu" },
   closeMenu: { es: "Cerrar menú", en: "Close menu" },
   languageSwitcherLabel: { es: "Cambiar a English", en: "Switch to Español" },
   primaryCta: { es: "Cuéntanos tu proceso", en: "Tell us about your process" },
   secondaryCta: { es: "Ver el método", en: "See the method" },
-  heroSrOnlyTitle: {
-    es: "Nublix — software a medida para pymes",
-    en: "Nublix — custom software for SMEs",
-  },
   footerLead: { es: "Hablemos de tu proceso", en: "Let's talk about your process" },
   footerHeadline: {
-    es: "Software a medida para pymes que han crecido más rápido que sus procesos.",
-    en: "Custom software for SMEs that have outgrown their processes.",
+    es: "Software a medida para empresas que han crecido más rápido que sus procesos.",
+    en: "Custom software for businesses that have outgrown their processes.",
   },
   footerNavLabel: { es: "Navegación", en: "Navigation" },
   footerCompanyLabel: { es: "Compañía", en: "Company" },
@@ -60,6 +66,8 @@ export const UI = {
     es: "Nublix Digital Solutions, S.L. Todos los derechos reservados.",
     en: "Nublix Digital Solutions, S.L. All rights reserved.",
   },
+  footerPrivacyLink: { es: "Privacidad", en: "Privacy" },
+  footerCookiesLink: { es: "Cookies", en: "Cookies" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export const SECTIONS: { href: string; label: Record<Locale, string> }[] = [
@@ -72,22 +80,42 @@ export const SECTIONS: { href: string; label: Record<Locale, string> }[] = [
 export const METADATA = {
   home: {
     title: {
-      es: "Nublix — Software a medida para pymes en Barcelona",
-      en: "Nublix — Custom Software for SMEs in Barcelona",
+      es: "Nublix: software a medida para empresas en Barcelona",
+      en: "Nublix: Custom Software for Businesses in Barcelona",
     },
     description: {
-      es: "Diseñamos y construimos el software que os falta — webs, apps y herramientas internas — partiendo de vuestro proceso de negocio, no de la tecnología.",
-      en: "We design and build the software you're missing — websites, apps, and internal tools — starting from your business process, not the technology.",
+      es: "Diseñamos y construimos el software que os falta: webs, apps y herramientas internas, partiendo de vuestro proceso de negocio, no de la tecnología.",
+      en: "We design and build the software you're missing: websites, apps, and internal tools, starting from your business process, not the technology.",
     },
   },
   contact: {
     title: {
-      es: "Contacto — Reserva tu diagnóstico | Nublix",
-      en: "Contact — Book Your Diagnosis | Nublix",
+      es: "Contacto: reserva tu diagnóstico | Nublix",
+      en: "Contact: Book Your Diagnosis | Nublix",
     },
     description: {
       es: "Reservad el diagnóstico digital: 2-3 horas con vuestro equipo, un informe con quick wins y precio fijo.",
       en: "Book your digital diagnosis: 2-3 hours with your team, a quick-wins report, and a fixed price.",
+    },
+  },
+  privacy: {
+    title: {
+      es: "Política de privacidad | Nublix",
+      en: "Privacy Policy | Nublix",
+    },
+    description: {
+      es: "Cómo tratamos los datos que nos enviáis por email en Nublix Digital Solutions, S.L.",
+      en: "How Nublix Digital Solutions, S.L. handles the data you send us by email.",
+    },
+  },
+  cookies: {
+    title: {
+      es: "Política de cookies | Nublix",
+      en: "Cookie Policy | Nublix",
+    },
+    description: {
+      es: "Qué cookies usa este sitio web de Nublix, y por qué de momento no usa ninguna de seguimiento.",
+      en: "What cookies this Nublix website uses, and why it currently uses no tracking cookies at all.",
     },
   },
 } as const;

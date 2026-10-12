@@ -131,7 +131,7 @@ export default function ProjectsGallery({ locale }: { locale: Locale }) {
                   <>
                     <Image
                       src={project.image}
-                      alt={`${project.title} — ${project.objective[locale]}`}
+                      alt={`${project.title}: ${project.objective[locale]}`}
                       fill
                       sizes="(max-width: 640px) 100vw, 50vw"
                       className="object-cover object-top"
