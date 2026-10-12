@@ -39,7 +39,7 @@ export const UI = {
   logoAriaLabel: { es: "nublix — inicio", en: "nublix — home" },
   openMenu: { es: "Abrir menú", en: "Open menu" },
   closeMenu: { es: "Cerrar menú", en: "Close menu" },
-  languageSwitcherLabel: { es: "English", en: "Español" },
+  languageSwitcherLabel: { es: "Cambiar a English", en: "Switch to Español" },
   primaryCta: { es: "Cuéntanos tu proceso", en: "Tell us about your process" },
   secondaryCta: { es: "Ver el método", en: "See the method" },
   heroSrOnlyTitle: {
@@ -66,7 +66,7 @@ export const SECTIONS: { href: string; label: Record<Locale, string> }[] = [
   { href: "#metodo", label: { es: "Método", en: "Method" } },
   { href: "#servicios", label: { es: "Servicios", en: "Services" } },
   { href: "#proyectos", label: { es: "Proyectos", en: "Projects" } },
-  { href: "#dudas", label: { es: "Dudas", en: "FAQ" } },
+  { href: "#faq", label: { es: "FAQ", en: "FAQ" } },
 ] as const;
 
 export const METADATA = {

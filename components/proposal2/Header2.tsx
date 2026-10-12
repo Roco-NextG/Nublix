@@ -8,6 +8,7 @@ import { scrollToHash } from "@/lib/lenisScrollTo";
 import NodeMark from "@/components/system/NodeMark";
 import NodeMarkLight from "./NodeMarkLight";
 import Capsule from "@/components/system/Capsule";
+import GlobeIcon from "@/components/system/GlobeIcon";
 import { CONTACT_PATH, HOME_PATH, SECTIONS, UI, alternatePath, localeFromPathname } from "@/lib/i18n";
 
 /** Floating glass pill nav — one rounded capsule holding logo/nav/CTA, with
@@ -126,14 +127,16 @@ export default function Header2() {
 
             <Link
               href={alternatePath(pathname)}
-              className={`ml-6 hidden font-mono text-[12px] tracking-[0.05em] uppercase transition-colors duration-150 ease-out lg:block ${
-                heroInView ? "text-paper/60 hover:text-paper" : "text-ink/45 hover:text-ink"
+              title={UI.languageSwitcherLabel[locale]}
+              aria-label={UI.languageSwitcherLabel[locale]}
+              className={`ml-3 flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors duration-150 ease-out active:scale-95 ${
+                heroInView ? "text-paper hover:bg-paper/10" : "text-ink/60 hover:bg-ink/5 hover:text-ink"
               }`}
             >
-              {UI.languageSwitcherLabel[locale]}
+              <GlobeIcon className="h-[18px] w-[18px]" />
             </Link>
 
-            <div className="ml-5 hidden lg:block">
+            <div className="ml-4 hidden lg:block">
               <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
             </div>
 
@@ -143,7 +146,7 @@ export default function Header2() {
               aria-expanded={menuOpen}
               aria-controls="propuesta2-mobile-menu"
               aria-label={menuOpen ? UI.closeMenu[locale] : UI.openMenu[locale]}
-              className={`ml-2 flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-150 ease-out active:scale-95 lg:hidden ${
+              className={`ml-1 flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-150 ease-out active:scale-95 lg:hidden ${
                 heroInView ? "hover:bg-paper/10" : "hover:bg-ink/5"
               }`}
             >
@@ -187,13 +190,6 @@ export default function Header2() {
                   {s.label[locale]}
                 </Link>
               ))}
-              <Link
-                href={alternatePath(pathname)}
-                onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-3 py-3 font-mono text-[13px] tracking-[0.05em] text-ink/50 uppercase transition-colors duration-150 ease-out hover:bg-ink/5 hover:text-ink"
-              >
-                {UI.languageSwitcherLabel[locale]}
-              </Link>
               <Button2 href={CONTACT_PATH[locale]} className="mt-1 justify-center" onClick={() => setMenuOpen(false)}>
                 {UI.primaryCta[locale]}
               </Button2>

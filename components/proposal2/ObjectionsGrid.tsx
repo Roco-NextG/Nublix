@@ -8,7 +8,7 @@ const HEADING = {
   title: {
     es: (
       <>
-        Las dudas <span className="text-teal">que nos repiten</span>
+        Las FAQ <span className="text-teal">que nos repiten</span>
       </>
     ),
     en: (
@@ -51,7 +51,7 @@ function FaqSchema({ locale }: { locale: Locale }) {
  * list — cards read as a FAQ board, not a stacked interrogation. */
 export default function ObjectionsGrid({ locale }: { locale: Locale }) {
   return (
-    <section id="dudas" className="scroll-mt-28 bg-mint px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">
+    <section id="faq" className="scroll-mt-28 bg-mint px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">
       <FaqSchema locale={locale} />
       <Reveal>
         <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>

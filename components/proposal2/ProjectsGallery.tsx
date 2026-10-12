@@ -111,9 +111,19 @@ export default function ProjectsGallery({ locale }: { locale: Locale }) {
             return (
               <div
                 key={project.id}
+                role="button"
+                tabIndex={0}
+                aria-pressed={active}
+                aria-label={project.title}
                 onMouseEnter={() => setActiveId(project.id)}
                 onClick={() => setActiveId(project.id)}
-                className={`relative cursor-pointer overflow-hidden rounded-2xl border border-ink/15 transition-[flex] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveId(project.id);
+                  }
+                }}
+                className={`relative cursor-pointer overflow-hidden rounded-2xl border border-ink/15 transition-[flex] duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] focus-visible:z-10 ${
                   active ? "flex-[4]" : "flex-[1]"
                 } ${dark ? "bg-ink" : "bg-mint"}`}
               >

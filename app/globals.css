@@ -116,10 +116,10 @@ html.lenis body {
   scroll-behavior: auto;
 }
 
-/* Glass surfaces for /propuesta2's Sequel-style restyle (nav, cards,
-   badges) — frosted panels on a light canvas, not used by the live site
-   or /propuesta. Light variant for paper/mint backgrounds; dark variant
-   for the few moments something needs to read as glass over ink. */
+/* Glass surfaces — frosted panels on a light canvas, used by the live
+   site's header and FAQ cards. Light variant for paper/mint backgrounds;
+   dark variant for the few moments something needs to read as glass over
+   ink (the header while the dark hero is in view). */
 .glass-light {
   background: rgba(20, 22, 31, 0.045);
   backdrop-filter: blur(20px) saturate(1.4);

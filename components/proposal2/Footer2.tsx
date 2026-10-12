@@ -28,12 +28,12 @@ export default function Footer2() {
         <div className="grid gap-12 sm:grid-cols-[1.3fr_1fr_1fr_1fr] sm:gap-8">
           <div>
             <TechLabel className="text-teal-dim">{UI.footerLead[locale]}</TechLabel>
-            <p className="mt-4 max-w-[30ch] text-[22px] leading-[1.15] font-bold tracking-[-0.01em] text-ink sm:text-[26px]">
+            <p className="mt-4 max-w-[30ch] text-[22px] leading-[1.25] font-bold tracking-[-0.01em] text-ink sm:text-[26px]">
               {UI.footerHeadline[locale]}
             </p>
             <ul className="mt-6 flex flex-col gap-2">
               {PROMISES[locale].map((promise) => (
-                <li key={promise} className="flex items-center gap-2 text-[13px] text-ink/55">
+                <li key={promise} className="flex items-center gap-2 text-[13px] text-ink/60">
                   <StatusDot className="text-teal" />
                   {promise}
                 </li>

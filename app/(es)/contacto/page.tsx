@@ -71,19 +71,13 @@ export default function ContactoPage() {
                 className="group flex flex-col gap-2 border-b border-dashed border-ink/10 py-6 transition-transform duration-200 ease-out sm:flex-row sm:items-baseline sm:gap-8 sm:hover:translate-x-2"
               >
                 <span className="font-mono text-[13px] text-teal">{step.index}</span>
-                <span className="text-[19px] font-bold tracking-[-0.01em] text-ink sm:w-[22ch] sm:shrink-0">
+                <h3 className="text-[19px] font-bold tracking-[-0.01em] text-ink sm:w-[22ch] sm:shrink-0">
                   {step.title}
-                </span>
-                <p className="text-[14px] leading-relaxed text-ink/55">{step.description}</p>
+                </h3>
+                <p className="text-[14px] leading-relaxed text-ink/60">{step.description}</p>
               </div>
             ))}
           </Reveal>
-
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[12px] tracking-[0.04em] text-ink/45 uppercase">
-            {PROMISES.es.map((promise) => (
-              <li key={promise}>{promise}</li>
-            ))}
-          </ul>
         </div>
 
         <Reveal className="border-t border-dashed border-ink/10 pt-8">
@@ -97,6 +91,17 @@ export default function ContactoPage() {
           <p className="mt-4 text-[15px] leading-relaxed text-ink/60">
             Contadnos en dos líneas qué os gustaría resolver. Os respondemos nosotros, no un formulario automático.
           </p>
+          <ul className="mt-6 flex flex-col gap-2">
+            {PROMISES.es.map((promise) => (
+              <li
+                key={promise}
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-ink/12 bg-paper px-3 py-1.5 text-[13px] text-ink/75"
+              >
+                <StatusDot className="text-teal" />
+                {promise}
+              </li>
+            ))}
+          </ul>
           <a
             href="mailto:hola@nublix.com"
             className="mt-8 inline-flex items-center gap-3 rounded-full bg-teal px-6 py-3 text-[14px] font-semibold text-ink transition-colors duration-150 ease-out hover:bg-teal-dim active:scale-[0.98]"
