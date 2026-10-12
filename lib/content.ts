@@ -57,10 +57,10 @@ export const SERVICES: LocalizedService[] = [
   {
     index: "01",
     icon: "dashboard",
-    title: { es: "Paneles y herramientas internas", en: "Dashboards and internal tools" },
+    title: { es: "Dashboards, KPIs y reporting ejecutivo", en: "Dashboards, KPIs, and executive reporting" },
     description: {
-      es: "Un panel donde todo el equipo ve los mismos números, sin depender del Excel que solo entiende una persona.",
-      en: "One dashboard where the whole team sees the same numbers, instead of relying on the spreadsheet only one person understands.",
+      es: "Decidid con los mismos números que ve todo el equipo, sin depender del Excel que solo entiende una persona.",
+      en: "Make decisions with the same numbers your whole team sees, instead of relying on the spreadsheet only one person understands.",
     },
     detail: {
       es: "Sustituimos la hoja de cálculo que solo entiende una persona por un panel compartido: pedidos, stock, producción o lo que gestionéis hoy a mano, con permisos por rol y datos siempre actualizados.",
@@ -95,21 +95,11 @@ export const SERVICES: LocalizedService[] = [
   },
   {
     index: "04",
-    icon: "codigo",
-    title: { es: "Webs y apps a medida", en: "Custom websites and apps" },
-    description: {
-      es: "Desde la web corporativa hasta la app que necesita producción, construida para vuestro proceso.",
-      en: "From your corporate website to the app your production team needs, built around your process.",
-    },
-    detail: {
-      es: "Diseñamos y construimos desde la web que os representa hasta la app interna que necesita el equipo de producción o comercial, siempre partiendo del proceso real, no de una plantilla genérica.",
-      en: "We design and build everything from the website that represents you to the internal app your production or sales team needs, always starting from the real process, never a generic template.",
-    },
-  },
-  {
-    index: "05",
     icon: "cloud",
-    title: { es: "Cloud e infraestructura gestionada", en: "Cloud and managed infrastructure" },
+    title: {
+      es: "Despliegue y puesta en marcha de hosting y bases de datos",
+      en: "Deployment and rollout of hosting and databases",
+    },
     description: {
       es: "Alojamos y mantenemos lo que construimos. Sin servidores que gestionar ni sustos de última hora.",
       en: "We host and maintain what we build. No servers to manage, no last-minute surprises.",
@@ -120,9 +110,9 @@ export const SERVICES: LocalizedService[] = [
     },
   },
   {
-    index: "06",
+    index: "05",
     icon: "pagos",
-    title: { es: "Sistemas de pago", en: "Payment systems" },
+    title: { es: "Integración de sistemas y módulos de pago", en: "Integration of payment systems and modules" },
     description: {
       es: "Cobros online y facturación conectada, sin que nadie tenga que cruzar hojas a mano.",
       en: "Online payments and connected invoicing, with no one cross-checking spreadsheets by hand.",
@@ -133,12 +123,12 @@ export const SERVICES: LocalizedService[] = [
     },
   },
   {
-    index: "07",
+    index: "06",
     icon: "iot",
-    title: { es: "IoT y sensórica", en: "IoT and sensors" },
+    title: { es: "Sensórica e IoT para industria", en: "Sensors and IoT for industry" },
     description: {
-      es: "Sensores en planta, maquinaria o flota que alimentan vuestro panel en tiempo real.",
-      en: "Sensors on your floor, machinery, or fleet that feed your dashboard in real time.",
+      es: "Datos en tiempo real desde planta, maquinaria o flota, para decidir sin depender del registro manual.",
+      en: "Real-time data from your floor, machinery, or fleet, so you can decide without relying on manual logging.",
     },
     detail: {
       es: "Conectamos sensores y dispositivos (temperatura, maquinaria, flota, stock) directamente a vuestro panel, para sustituir el registro manual por datos en tiempo real.",

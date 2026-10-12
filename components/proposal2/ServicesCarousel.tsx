@@ -16,7 +16,7 @@ type Tone = "ink" | "paper" | "mint";
 
 /** First card anchors the row in ink; the rest alternate paper/mint so no
  * two neighbours match. */
-const TONES: Tone[] = ["ink", "paper", "mint", "paper", "mint", "paper", "mint"];
+const TONES: Tone[] = ["ink", "paper", "mint", "paper", "mint", "paper"];
 
 const TONE_STYLES: Record<Tone, { bg: string; text: string; sub: string; circle: string }> = {
   ink: { bg: "bg-ink", text: "text-paper", sub: "text-paper/60", circle: "bg-paper/10" },
@@ -29,12 +29,12 @@ const HEADING = {
   title: {
     es: (
       <>
-        Siete piezas. <span className="text-teal">Un mismo sistema.</span>
+        Seis piezas. <span className="text-teal">Un mismo sistema.</span>
       </>
     ),
     en: (
       <>
-        Seven pieces. <span className="text-teal">One system.</span>
+        Six pieces. <span className="text-teal">One system.</span>
       </>
     ),
   },

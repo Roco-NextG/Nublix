@@ -324,13 +324,6 @@ export default function ProjectsGallery({ locale }: { locale: Locale }) {
       </Reveal>
 
       <Reveal className="mt-14">
-        <TechLabel className="text-teal-dim">{HEADING.ownProducts[locale]}</TechLabel>
-        <div className="mt-6">
-          <OwnProductsGallery locale={locale} />
-        </div>
-      </Reveal>
-
-      <Reveal className="mt-16 border-t border-dashed border-ink/12 pt-14">
         <TechLabel className="text-teal-dim">{HEADING.customSolution[locale]}</TechLabel>
         <p className="mt-3 max-w-[52ch] text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">
           {HEADING.customSolutionSubtitle[locale]}
@@ -339,6 +332,13 @@ export default function ProjectsGallery({ locale }: { locale: Locale }) {
           {MODULES.map((module) => (
             <ModuleCard key={module.id} module={module} locale={locale} />
           ))}
+        </div>
+      </Reveal>
+
+      <Reveal className="mt-16 border-t border-dashed border-ink/12 pt-14">
+        <TechLabel className="text-teal-dim">{HEADING.ownProducts[locale]}</TechLabel>
+        <div className="mt-6">
+          <OwnProductsGallery locale={locale} />
         </div>
       </Reveal>
     </section>
