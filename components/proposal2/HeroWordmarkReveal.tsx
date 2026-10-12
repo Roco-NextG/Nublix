@@ -61,7 +61,15 @@ export default function HeroWordmarkReveal() {
           aria-hidden="true"
           className="select-none text-[20vw] leading-none font-black tracking-[-0.03em] text-paper sm:text-[180px] lg:text-[240px]"
         >
-          nublix
+          nubl
+          <span className="relative inline-block">
+            {/* Dotless ı stands in for the real "i" so the dot above it can
+                be its own teal-colored element instead of inheriting the
+                glyph's own paper-colored dot. */}
+            ı
+            <span className="absolute bottom-[0.747em] left-1/2 h-[0.17em] w-[0.17em] -translate-x-1/2 rounded-full bg-teal" />
+          </span>
+          x
         </h2>
       </div>
       <span className="sr-only">Nublix</span>
