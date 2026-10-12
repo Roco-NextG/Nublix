@@ -67,11 +67,15 @@ export default function HeroWordmarkReveal() {
                 be its own teal-colored element instead of inheriting the
                 glyph's own paper-colored dot. */}
             ı
-            {/* Centered on the ı glyph's own ink (measured via canvas
-                actualBoundingBoxLeft/Right), not the wider advance box —
-                the glyph's side bearings aren't symmetric, so centering on
-                the box alone sits the dot visibly right of the stem. */}
-            <span className="absolute bottom-[0.747em] left-[calc(50%-0.05em)] h-[0.17em] w-[0.17em] -translate-x-1/2 rounded-full bg-teal" />
+            {/* Centered on the ı glyph's rasterized ink, not the wrapper's
+                own box: the h2's negative tracking (-0.03em) trims space
+                from the right side of the glyph's advance box only, so the
+                box's own midpoint sits left of where the stem's ink
+                actually is. Measured by rendering "ı" to an offscreen
+                canvas and scanning pixel alpha for the leftmost/rightmost
+                ink column, both with and without tracking applied, to
+                isolate that shift. */}
+            <span className="absolute bottom-[0.747em] left-[calc(50%+0.014em)] h-[0.17em] w-[0.17em] -translate-x-1/2 rounded-full bg-teal" />
           </span>
           x
         </h2>
