@@ -61,9 +61,7 @@ type Module = {
  * Nublix product like the SaaS row above). Hours-saved figures are the
  * client's own numbers, not estimates we invented — per field, not a
  * single blended metric, since each module saves time differently (a
- * flat weekly amount, a range, or a per-document amount). `image` is
- * left undefined until real screenshots exist; the card falls back to an
- * icon treatment rather than stock art or a placeholder photo. */
+ * flat weekly amount, a range, or a per-document amount). */
 const MODULES: Module[] = [
   {
     id: "exec-dashboard",
@@ -75,6 +73,7 @@ const MODULES: Module[] = [
     },
     hoursSaved: { es: "4h de ahorro semanales", en: "4 hours saved per week" },
     icon: "dashboard",
+    image: "/projects/modules/dashboard-ejecutivo.png",
   },
   {
     id: "sales-module",
@@ -86,6 +85,7 @@ const MODULES: Module[] = [
     },
     hoursSaved: { es: "Entre 6h y 12h de ahorro semanales", en: "6 to 12 hours saved per week" },
     icon: "conexion",
+    image: "/projects/modules/modulo-comercial.png",
   },
   {
     id: "contract-reader",
@@ -97,6 +97,7 @@ const MODULES: Module[] = [
     },
     hoursSaved: { es: "1h de ahorro por contrato", en: "1 hour saved per contract" },
     icon: "automatizacion",
+    image: "/projects/modules/lectura-contratos.png",
   },
 ];
 
@@ -273,12 +274,39 @@ function ModuleCard({ module, locale }: { module: Module; locale: Locale }) {
         className="relative h-full w-full rounded-2xl transition-transform duration-500 [transform-style:preserve-3d]"
         style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
       >
-        {/* Front: icon placeholder until a real screenshot replaces it */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-2xl border border-ink/12 bg-mint p-6 text-center [backface-visibility:hidden]">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-paper">
-            <Image src={`/brand/icons/${module.icon}.svg`} alt="" width={28} height={28} />
-          </span>
-          <h4 className="text-[17px] font-bold tracking-[-0.01em] text-ink">{module.title[locale]}</h4>
+        {/* Front: the real screenshot, title overlaid at the bottom —
+            falls back to an icon treatment only if a module ever ships
+            without one. */}
+        <div className="absolute inset-0 overflow-hidden rounded-2xl border border-ink/12 [backface-visibility:hidden]">
+          {module.image ? (
+            <>
+              <Image
+                src={module.image}
+                alt={module.title[locale]}
+                fill
+                sizes="(max-width: 640px) 100vw, 33vw"
+                className="object-cover object-top"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to top, rgba(20,22,31,0.9), rgba(20,22,31,0.25) 50%, rgba(20,22,31,0.05) 75%)",
+                }}
+              />
+              <h4 className="absolute inset-x-0 bottom-0 p-5 text-[17px] font-bold tracking-[-0.01em] text-paper">
+                {module.title[locale]}
+              </h4>
+            </>
+          ) : (
+            <div className="flex h-full flex-col items-center justify-center gap-4 bg-mint p-6 text-center">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-paper">
+                <Image src={`/brand/icons/${module.icon}.svg`} alt="" width={28} height={28} />
+              </span>
+              <h4 className="text-[17px] font-bold tracking-[-0.01em] text-ink">{module.title[locale]}</h4>
+            </div>
+          )}
         </div>
 
         {/* Back: the real detail */}
