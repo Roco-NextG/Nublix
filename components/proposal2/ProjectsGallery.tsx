@@ -120,10 +120,6 @@ const HEADING = {
   },
   ownProducts: { es: "Productos propios", en: "Our own products" },
   customSolution: { es: "Solución a medida", en: "Custom solution" },
-  customSolutionSubtitle: {
-    es: "Módulos reales que construimos para Clean, un encargo a medida.",
-    en: "Real modules we built for Clean, a custom-solution client.",
-  },
 } as const;
 
 /**
@@ -283,7 +279,6 @@ function ModuleCard({ module, locale }: { module: Module; locale: Locale }) {
             <Image src={`/brand/icons/${module.icon}.svg`} alt="" width={28} height={28} />
           </span>
           <h4 className="text-[17px] font-bold tracking-[-0.01em] text-ink">{module.title[locale]}</h4>
-          <TechLabel className="text-ink/40">{module.client}</TechLabel>
         </div>
 
         {/* Back: the real detail */}
@@ -292,11 +287,8 @@ function ModuleCard({ module, locale }: { module: Module; locale: Locale }) {
           style={{ transform: "rotateY(180deg)" }}
         >
           <div>
-            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-paper/10 px-3 py-1.5">
-              <StatusDot className="text-teal" />
-              <TechLabel className="text-paper/85">{module.client}</TechLabel>
-            </div>
-            <h4 className="mt-4 text-[19px] leading-tight font-bold tracking-[-0.01em]">
+            <StatusDot className="text-teal" />
+            <h4 className="mt-3 text-[19px] leading-tight font-bold tracking-[-0.01em]">
               {module.title[locale]}
             </h4>
             <p className="mt-2 text-[13px] leading-relaxed text-paper/60">{module.description[locale]}</p>
@@ -325,10 +317,7 @@ export default function ProjectsGallery({ locale }: { locale: Locale }) {
 
       <Reveal className="mt-14">
         <TechLabel className="text-teal-dim">{HEADING.customSolution[locale]}</TechLabel>
-        <p className="mt-3 max-w-[52ch] text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">
-          {HEADING.customSolutionSubtitle[locale]}
-        </p>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {MODULES.map((module) => (
             <ModuleCard key={module.id} module={module} locale={locale} />
           ))}
