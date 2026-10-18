@@ -49,10 +49,12 @@ export default function CookiesPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               We use Microsoft Clarity to understand how you navigate the site: it records
               sessions in aggregate and generates click and scroll heatmaps, so we can see what
-              works and what doesn&apos;t. To do this, Clarity saves cookies in your browser that
-              recognize it as a visitor across pages and visits. We don&apos;t use Google Analytics or
-              advertising pixels, and we don&apos;t sell this data to anyone. You can read the detail
-              on Clarity&apos;s cookies and how Microsoft handles them in its{" "}
+              works and what doesn&apos;t. Clarity doesn&apos;t activate until you accept it in the
+              banner you see when you arrive; if you decline, nothing loads and no cookie of its
+              is saved. If you accept, it saves cookies in your browser that recognize it as a
+              visitor across pages and visits. We don&apos;t use Google Analytics or advertising
+              pixels, and we don&apos;t sell this data to anyone. You can read the detail on
+              Clarity&apos;s cookies and how Microsoft handles them in its{" "}
               <a
                 href="https://clarity.microsoft.com/legal/privacy-notice"
                 target="_blank"

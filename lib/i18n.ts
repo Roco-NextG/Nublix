@@ -68,6 +68,13 @@ export const UI = {
   },
   footerPrivacyLink: { es: "Privacidad", en: "Privacy" },
   footerCookiesLink: { es: "Cookies", en: "Cookies" },
+  cookieBannerText: {
+    es: "Usamos Microsoft Clarity para entender cómo navegáis por la web (sesiones agregadas, mapas de calor de clics y scroll). No se activa hasta que lo aceptéis.",
+    en: "We use Microsoft Clarity to understand how you use the site (aggregate sessions, click and scroll heatmaps). It doesn't activate until you accept.",
+  },
+  cookieBannerLearnMore: { es: "Más información", en: "Learn more" },
+  cookieBannerReject: { es: "Rechazar", en: "Decline" },
+  cookieBannerAccept: { es: "Aceptar", en: "Accept" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export const SECTIONS: { href: string; label: Record<Locale, string> }[] = [

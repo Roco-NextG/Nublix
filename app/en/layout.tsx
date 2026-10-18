@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
-import ClarityScript from "@/components/ClarityScript";
+import CookieConsent from "@/components/CookieConsent";
 import Header2 from "@/components/proposal2/Header2";
 import Footer2 from "@/components/proposal2/Footer2";
 import OrganizationSchema from "@/components/system/OrganizationSchema";
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       style={{ "--font-space-mono": "var(--font-space-grotesk)" } as React.CSSProperties}
     >
       <body className="min-h-full bg-paper text-ink antialiased">
-        <ClarityScript />
+        <CookieConsent />
         <OrganizationSchema />
         <a
           href="#main-content"

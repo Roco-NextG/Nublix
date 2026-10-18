@@ -49,10 +49,12 @@ export default function CookiesPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               Usamos Microsoft Clarity para entender cómo navegáis por la web: graba sesiones de
               forma agregada y genera mapas de calor de clics y scroll, para que podamos ver qué
-              funciona y qué no. Para esto, Clarity guarda cookies en tu navegador que lo
-              reconocen como visitante entre páginas y visitas. No usamos Google Analytics ni
-              píxeles de publicidad, y no vendemos estos datos a nadie. Puedes leer el detalle de
-              las cookies de Clarity y cómo las trata Microsoft en su{" "}
+              funciona y qué no. Clarity no se activa hasta que lo aceptéis en el aviso que veis
+              al llegar a la web; si lo rechazáis, no se carga ni guarda ninguna cookie suya. Si lo
+              aceptáis, guarda cookies en tu navegador que lo reconocen como visitante entre
+              páginas y visitas. No usamos Google Analytics ni píxeles de publicidad, y no
+              vendemos estos datos a nadie. Puedes leer el detalle de las cookies de Clarity y
+              cómo las trata Microsoft en su{" "}
               <a
                 href="https://clarity.microsoft.com/legal/privacy-notice"
                 target="_blank"
