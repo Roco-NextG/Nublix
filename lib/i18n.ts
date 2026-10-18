@@ -114,10 +114,10 @@ export const METADATA = {
       en: "Cookie Policy | Nublix",
     },
     description: {
-      es: "Qué cookies usa este sitio web de Nublix, y por qué de momento no usa ninguna de seguimiento.",
-      en: "What cookies this Nublix website uses, and why it currently uses no tracking cookies at all.",
+      es: "Qué cookies usa este sitio web de Nublix, incluida Microsoft Clarity, y para qué sirven.",
+      en: "What cookies this Nublix website uses, including Microsoft Clarity, and what they're for.",
     },
   },
 } as const;
 
-export const SITE_URL = "https://nublix.com";
+export const SITE_URL = "https://nublix.es";

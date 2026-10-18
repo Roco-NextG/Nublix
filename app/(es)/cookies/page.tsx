@@ -26,7 +26,7 @@ export default function CookiesPage() {
           Política de <span className="text-teal">cookies.</span>
         </h1>
         <p className="mt-6 max-w-[60ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-          Última actualización: 13 de octubre de 2026. Corta y directa, como el resto de la web.
+          Última actualización: 18 de octubre de 2026. Corta y directa, como el resto de la web.
         </p>
       </Reveal>
 
@@ -47,23 +47,35 @@ export default function CookiesPage() {
               Qué cookies usa esta web ahora mismo
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
-              Ninguna. Este sitio no usa cookies de analítica, de publicidad ni de seguimiento de
-              ningún tipo. No medimos visitas con Google Analytics ni herramientas parecidas, y no
-              hay píxeles de redes sociales cargando en segundo plano. Tu navegador puede guardar
-              cosas técnicas básicas para que la web funcione (por ejemplo, recordar que el menú
-              está abierto mientras navegas), pero eso vive en tu propio navegador y nunca sale de
-              ahí ni lo leemos nosotros.
+              Usamos Microsoft Clarity para entender cómo navegáis por la web: graba sesiones de
+              forma agregada y genera mapas de calor de clics y scroll, para que podamos ver qué
+              funciona y qué no. Para esto, Clarity guarda cookies en tu navegador que lo
+              reconocen como visitante entre páginas y visitas. No usamos Google Analytics ni
+              píxeles de publicidad, y no vendemos estos datos a nadie. Puedes leer el detalle de
+              las cookies de Clarity y cómo las trata Microsoft en su{" "}
+              <a
+                href="https://clarity.microsoft.com/legal/privacy-notice"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-dim underline underline-offset-2"
+              >
+                aviso de privacidad
+              </a>
+              . Aparte de esto, tu navegador puede guardar cosas técnicas básicas para que la web
+              funcione (por ejemplo, recordar que el menú está abierto mientras navegas), que
+              nunca sale de tu propio navegador.
             </p>
           </div>
 
           <div>
             <h2 className="text-[20px] font-bold tracking-[-0.01em] sm:text-[22px]">
-              Si eso cambia
+              Si añadimos algo más
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
-              Si en algún momento añadimos analítica u otra herramienta que use cookies,
-              actualizaremos esta página con el detalle de qué cookie es, para qué sirve y cuánto
-              dura, y te pediremos permiso antes de activarla si así lo exige la ley.
+              Si en algún momento añadimos otra herramienta de analítica, publicidad o cualquier
+              otra que use cookies, actualizaremos esta página con el detalle de qué cookie es,
+              para qué sirve y cuánto dura, y te pediremos permiso antes de activarla si así lo
+              exige la ley.
             </p>
           </div>
 
@@ -72,9 +84,9 @@ export default function CookiesPage() {
               Cómo gestionar las cookies en tu navegador
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
-              Aunque hoy esta web no las necesite, puedes revisar y borrar las cookies guardadas
-              por cualquier sitio desde la configuración de tu navegador (Chrome, Safari, Firefox
-              o el que uses tiene una sección de privacidad o cookies para esto).
+              Puedes revisar y borrar las cookies guardadas por cualquier sitio, incluido este,
+              desde la configuración de tu navegador (Chrome, Safari, Firefox o el que uses tiene
+              una sección de privacidad o cookies para esto).
             </p>
           </div>
 
