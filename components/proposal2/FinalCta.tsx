@@ -18,8 +18,8 @@ const COPY = {
     ),
   },
   body: {
-    es: "Una sesión de 2-3h. Precio fijo. Sin permanencia ni letra pequeña.",
-    en: "A 2-3h session. Fixed price. No commitment, no fine print.",
+    es: "Una llamada de 30 minutos, gratis y sin compromiso. El diagnóstico llega después, si encajamos.",
+    en: "A 30-minute call, free and no commitment. The diagnosis comes after, if we're a fit.",
   },
 } as const;
 

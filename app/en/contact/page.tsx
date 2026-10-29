@@ -29,23 +29,23 @@ export const metadata: Metadata = {
 const STEPS = [
   {
     index: "01",
-    title: "Tell us how you work today",
-    description: "You tell us how your process works today.",
+    title: "We book your free call",
+    description: "30 min, no commitment, to see if we're a fit.",
   },
   {
     index: "02",
-    title: "We map the process",
-    description: "A 2-3h session with your team, in person or remote, to map it out.",
+    title: "We run the diagnosis",
+    description: "A 2-3h session, fixed price, once you're in the project.",
   },
   {
     index: "03",
-    title: "We find the friction",
-    description: "A quick-wins report, whether you continue with us or not.",
+    title: "We design the system",
+    description: "A clickable prototype and fixed price before we build.",
   },
   {
     index: "04",
-    title: "We design the system",
-    description: "Fixed price, locked in before we start building.",
+    title: "We build in sprints",
+    description: "Short cycles, real progress you can try.",
   },
 ] as const;
 
@@ -55,10 +55,10 @@ export default function ContactPage() {
       <Reveal>
         <Eyebrow>Contact</Eyebrow>
         <h1 className="mt-5 max-w-[16ch] text-[clamp(2.25rem,5vw,4rem)] leading-[0.98] font-bold tracking-[-0.02em]">
-          Let&apos;s book your <span className="text-teal">diagnosis.</span>
+          Let&apos;s book your <span className="text-teal">call.</span>
         </h1>
         <p className="mt-6 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-          Write to us and we&apos;ll propose a date for the diagnosis session. No fine print.
+          Write to us and we&apos;ll propose a date for a 30-minute call, free and no commitment.
         </p>
       </Reveal>
 

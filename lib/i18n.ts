@@ -97,12 +97,12 @@ export const METADATA = {
   },
   contact: {
     title: {
-      es: "Contacto: reserva tu diagnóstico | Nublix",
-      en: "Contact: Book Your Diagnosis | Nublix",
+      es: "Contacto: reserva tu llamada gratuita | Nublix",
+      en: "Contact: Book Your Free Call | Nublix",
     },
     description: {
-      es: "Reservad el diagnóstico digital: 2-3 horas con vuestro equipo, un informe con quick wins y precio fijo.",
-      en: "Book your digital diagnosis: 2-3 hours with your team, a quick-wins report, and a fixed price.",
+      es: "Reservad una llamada de 30 minutos, sin coste ni compromiso, para ver si encajamos.",
+      en: "Book a free, no-commitment 30-minute call to see if we're a fit.",
     },
   },
   privacy: {

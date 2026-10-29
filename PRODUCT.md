@@ -21,10 +21,11 @@ Empieza por el proceso de negocio, no por la tecnología: mapea cómo trabaja ho
 ## Operating Context
 
 El Método Nublix (proceso real de cada proyecto, no decorativo):
-1. **Diagnóstico** — sesión de 2-3h con el equipo del cliente + informe con quick wins, precio fijo. Puerta de entrada, sin compromiso posterior.
-2. **Diseño del proceso** — mapear cómo trabaja hoy el equipo antes de tocar código.
-3. **Construcción** — entregas parciales cada semana, no una caja negra al final.
-4. **Entrega y soporte** — se habla con quien construyó la herramienta, no con un ticket sin nombre; el soporte lo dan los 3 socios.
+1. **Llamada gratuita** — 30 min, sin coste, para entender qué necesita el cliente y ver si encajamos. Puerta de entrada, sin compromiso.
+2. **Diagnóstico** — ya dentro del proyecto, sesión de 2-3h con el equipo del cliente + informe con quick wins, precio fijo. Sesión de trabajo a fondo, no la puerta de entrada.
+3. **Diseño del proceso** — mapear cómo trabaja hoy el equipo antes de tocar código.
+4. **Construcción** — entregas parciales cada semana, no una caja negra al final.
+5. **Entrega y soporte** — se habla con quien construyó la herramienta, no con un ticket sin nombre; el soporte lo dan los 3 socios.
 
 ## Capabilities and Constraints
 

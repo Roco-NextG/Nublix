@@ -20,15 +20,24 @@ type LocalizedStep = {
 export const METHOD_STEPS: LocalizedStep[] = [
   {
     index: "01",
-    title: { es: "Diagnóstico", en: "Diagnosis" },
-    lead: { es: "2-3h con tu equipo. Precio fijo.", en: "2-3h with your team. Fixed price." },
+    title: { es: "Llamada gratuita", en: "Free call" },
+    lead: { es: "30 min, sin coste.", en: "30 min, no cost." },
     description: {
-      es: "Nos sentamos contigo y tu equipo para entender cómo trabajáis hoy, dónde se pierde el tiempo y qué datos necesitas de verdad. Sales con un informe de mejoras rápidas y una hoja de ruta, aunque no sigas con nosotros.",
-      en: "We sit down with you and your team to understand how you work today, where time gets lost, and what data you actually need. You walk away with a quick-wins report and a roadmap, even if you don't continue with us.",
+      es: "Una llamada rápida para entender qué necesitáis y ver si encajamos. Sin compromiso, sin powerpoints de venta.",
+      en: "A quick call to understand what you need and see if we're a fit. No commitment, no sales decks.",
     },
   },
   {
     index: "02",
+    title: { es: "Diagnóstico", en: "Diagnosis" },
+    lead: { es: "2-3h con tu equipo. Precio fijo.", en: "2-3h with your team. Fixed price." },
+    description: {
+      es: "Ya dentro del proyecto, nos sentamos a fondo con tu equipo para entender cómo trabajáis hoy, dónde se pierde el tiempo y qué datos necesitáis de verdad. Sales con un informe de mejoras rápidas y una hoja de ruta.",
+      en: "Once you're in, we sit down in depth with your team to understand how you work today, where time gets lost, and what data you actually need. You walk away with a quick-wins report and a roadmap.",
+    },
+  },
+  {
+    index: "03",
     title: { es: "Diseño y precio cerrado", en: "Design and fixed price" },
     lead: {
       es: "Prototipo navegable antes de programar.",
@@ -40,7 +49,7 @@ export const METHOD_STEPS: LocalizedStep[] = [
     },
   },
   {
-    index: "03",
+    index: "04",
     title: { es: "Construcción por entregas", en: "Build in sprints" },
     lead: { es: "Ciclos de dos semanas.", en: "Two-week cycles." },
     description: {
@@ -49,7 +58,7 @@ export const METHOD_STEPS: LocalizedStep[] = [
     },
   },
   {
-    index: "04",
+    index: "05",
     title: { es: "Implantación y evolución", en: "Rollout and evolution" },
     lead: { es: "Formación + mantenimiento.", en: "Training + maintenance." },
     description: {
@@ -85,8 +94,8 @@ export const OBJECTIONS: LocalizedObjection[] = [
     index: "01",
     title: { es: "¿No es muy caro el software a medida?", en: "Isn't custom software expensive?" },
     description: {
-      es: "Empezamos por un diagnóstico de bajo coste y proyectos por fases. Calculamos juntos el ahorro en horas para que veas el retorno antes de decidir nada más.",
-      en: "We start with a low-cost diagnosis and phased projects. We calculate the time saved together so you see the return before deciding anything else.",
+      es: "Empezamos con una llamada gratuita, y solo pasamos a un diagnóstico de precio fijo si decidís seguir. Calculamos juntos el ahorro en horas para que veáis el retorno antes de comprometeros a nada más.",
+      en: "We start with a free call, and only move to a fixed-price diagnosis if you decide to continue. We calculate the time saved together so you see the return before committing to anything else.",
     },
   },
   {
@@ -96,8 +105,8 @@ export const OBJECTIONS: LocalizedObjection[] = [
       en: "I don't have time for a project like this",
     },
     description: {
-      es: "Te pedimos pocas horas: un diagnóstico inicial y revisiones cortas cada dos semanas. Del resto nos ocupamos nosotros.",
-      en: "We only need a few hours from you: an initial diagnosis and short check-ins every two weeks. We handle the rest.",
+      es: "Te pedimos pocas horas: una llamada de 30 min, el diagnóstico, y revisiones cortas cada dos semanas. Del resto nos ocupamos nosotros.",
+      en: "We only need a few hours from you: a 30-min call, the diagnosis, and short check-ins every two weeks. We handle the rest.",
     },
   },
   {

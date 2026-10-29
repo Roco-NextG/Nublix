@@ -14,11 +14,12 @@ Empresa de desarrollo de software a medida (webs, apps, herramientas internas), 
 - Lo que quiere: control y visibilidad de su negocio, ahorrar tiempo, un proveedor que responda, precio cerrado sin sorpresas.
 - **No inventar cifras de clientes ni casos de éxito — todavía no existen.** Usar mensajes de proceso reales en su lugar (ej. "Sin permanencia · Presupuesto cerrado, sin sorpresas"). Sin logos de clientes aún: omitir la barra de confianza o dejarla como placeholder claramente marcado. Si en el futuro hay métricas reales ("-42% trabajo manual"), sí se pueden mostrar — nunca inventadas.
 
-## El Método Nublix (4 pasos — usar como estructura real, no decorativa)
-1. **Diagnóstico** — sesión de 2-3h + informe con quick wins, precio fijo. Puerta de entrada.
-2. **Diseño del proceso** — mapear cómo trabaja hoy el equipo antes de tocar código.
-3. **Construcción** — entregas parciales cada semana, no una caja negra al final.
-4. **Entrega y soporte** — se habla con quien construyó la herramienta, no con un ticket sin nombre.
+## El Método Nublix (5 pasos — usar como estructura real, no decorativa)
+1. **Llamada gratuita** — 30 min, sin coste. Entender qué necesitan y ver si encajamos. Puerta de entrada, sin compromiso.
+2. **Diagnóstico** — ya dentro del proyecto, sesión de 2-3h + informe con quick wins, precio fijo. Sesión de trabajo a fondo, no la puerta de entrada.
+3. **Diseño del proceso** — mapear cómo trabaja hoy el equipo antes de tocar código.
+4. **Construcción** — entregas parciales cada semana, no una caja negra al final.
+5. **Entrega y soporte** — se habla con quien construyó la herramienta, no con un ticket sin nombre.
 
 ## Dirección de marca (v2 — "digital industrial design")
 
