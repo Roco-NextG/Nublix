@@ -335,7 +335,7 @@ export default function ProjectsGallery({ locale }: { locale: Locale }) {
     <section id="proyectos" className="scroll-mt-28 bg-paper px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">
       <Reveal>
         <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
-        <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[0.95] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
+        <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[1.08] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
           {HEADING.title[locale]}
         </h2>
         <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">

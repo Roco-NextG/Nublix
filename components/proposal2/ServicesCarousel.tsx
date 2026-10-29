@@ -100,7 +100,7 @@ function StaticServices({ locale }: { locale: Locale }) {
     <section id="servicios" className="scroll-mt-28 bg-paper py-16 text-ink sm:py-24">
       <div className="px-5 sm:px-8 lg:px-16">
         <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
-        <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[0.95] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
+        <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[1.08] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
           {HEADING.title[locale]}
         </h2>
       </div>
@@ -155,7 +155,7 @@ function PinnedServices({ locale }: { locale: Locale }) {
         <div className="flex h-full flex-col pt-16 pb-10 sm:pt-20">
           <div className="px-5 sm:px-8 lg:px-16">
             <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
-            <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[0.95] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
+            <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[1.08] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
               {HEADING.title[locale]}
             </h2>
           </div>

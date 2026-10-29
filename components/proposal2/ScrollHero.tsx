@@ -130,7 +130,7 @@ function StaticHero({ locale }: { locale: Locale }) {
             >
               <div>
                 <TechLabel className="text-teal-dim">{frame.tag[locale]}</TechLabel>
-                <HeadingTag className="mt-5 max-w-[11ch] text-[36px] leading-[0.98] font-bold tracking-[-0.03em] text-ink sm:text-[52px]">
+                <HeadingTag className="mt-5 max-w-[11ch] text-[36px] leading-[1.08] font-bold tracking-[-0.03em] text-ink sm:text-[52px]">
                   <Headline title={frame.title[locale]} teal={frame.teal[locale]} />
                 </HeadingTag>
                 <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
@@ -235,7 +235,7 @@ function PinnedHero({ locale }: { locale: Locale }) {
                     }}
                   >
                     <TechLabel className="text-teal">{frame.tag[locale]}</TechLabel>
-                    <HeadingTag className="mt-5 max-w-[11ch] text-[40px] leading-[0.95] font-bold tracking-[-0.03em] text-paper sm:text-[64px] lg:text-[80px]">
+                    <HeadingTag className="mt-5 max-w-[11ch] text-[40px] leading-[1.08] font-bold tracking-[-0.03em] text-paper sm:text-[64px] lg:text-[80px]">
                       <Headline title={frame.title[locale]} teal={frame.teal[locale]} />
                     </HeadingTag>
                     <p className="mt-6 max-w-[42ch] text-[16px] leading-relaxed text-paper/70 sm:text-[19px]">
