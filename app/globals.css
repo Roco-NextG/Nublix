@@ -61,7 +61,7 @@ body {
    clip-path + opacity, never width/height/position. Fires once per element;
    the Reveal component skips this entirely under prefers-reduced-motion. */
 [data-reveal] {
-  clip-path: inset(0 0 18% 0);
+  clip-path: inset(0 0 6% 0);
   opacity: 0;
   transition:
     clip-path 700ms var(--ease-out-strong),
@@ -74,7 +74,7 @@ body {
 }
 
 .reveal-stagger > * {
-  clip-path: inset(0 0 18% 0);
+  clip-path: inset(0 0 6% 0);
   opacity: 0;
   transition:
     clip-path 600ms var(--ease-out-strong),
