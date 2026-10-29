@@ -37,7 +37,7 @@ export default function CookieConsent() {
 
       {consent === "pending" ? (
         <div className="fixed inset-x-4 bottom-4 z-[60] sm:inset-x-auto sm:right-6 sm:bottom-6 sm:max-w-[400px]">
-          <div className="rounded-2xl border border-dashed border-ink/15 bg-paper p-5 shadow-[0_10px_30px_rgba(20,22,31,0.15)]">
+          <div className="rounded-2xl border border-dashed border-ink/15 bg-paper p-5 shadow-[0_10px_30px_rgb(var(--color-ink-rgb)_/_0.15)]">
             <div className="flex items-start gap-2">
               <StatusDot className="mt-[6px] text-teal" />
               <p className="text-[13px] leading-relaxed text-ink/70">

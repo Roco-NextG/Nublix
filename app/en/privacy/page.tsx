@@ -22,7 +22,7 @@ export default function PrivacyPage() {
     <section className="bg-paper px-5 pt-36 pb-24 text-ink sm:px-8 sm:pt-44 sm:pb-32 lg:px-16">
       <Reveal>
         <Eyebrow>Privacy</Eyebrow>
-        <h1 className="mt-5 max-w-[20ch] text-[36px] leading-[0.98] font-bold tracking-[-0.02em] sm:text-[52px]">
+        <h1 className="mt-5 max-w-[20ch] text-[clamp(2.25rem,4.5vw,3.25rem)] leading-[0.98] font-bold tracking-[-0.02em]">
           Privacy <span className="text-teal">policy.</span>
         </h1>
         <p className="mt-6 max-w-[60ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">

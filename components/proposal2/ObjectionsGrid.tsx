@@ -64,7 +64,7 @@ export default function ObjectionsGrid({ locale }: { locale: Locale }) {
         {OBJECTIONS.map((item) => (
           <details
             key={item.index}
-            className="group rounded-2xl border border-ink/10 bg-paper/70 px-6 py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-xl backdrop-saturate-150 transition-colors duration-300 open:border-transparent open:bg-ink/75 open:text-paper open:shadow-[0_10px_30px_rgba(20,22,31,0.25),inset_0_1px_0_rgba(255,255,255,0.08)]"
+            className="group rounded-2xl border border-ink/10 bg-paper/70 px-6 py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-xl backdrop-saturate-150 transition-colors duration-300 open:border-transparent open:bg-ink/75 open:text-paper open:shadow-[0_10px_30px_rgb(var(--color-ink-rgb)_/_0.25),inset_0_1px_0_rgba(255,255,255,0.08)]"
           >
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
               <span className="text-[16px] leading-snug font-medium tracking-[-0.01em] sm:text-[18px]">

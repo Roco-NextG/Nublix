@@ -49,7 +49,7 @@ function ServiceCard({
   index: number;
   locale: Locale;
 }) {
-  const tone = TONE_STYLES[TONES[index]];
+  const tone = TONE_STYLES[TONES[index % TONES.length]];
   const isFirst = index === 0;
 
   return (

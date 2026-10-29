@@ -192,7 +192,7 @@ export default function Header2() {
           className={`grid lg:hidden ${menuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} transition-[grid-template-rows] duration-300 ease-out`}
         >
           <div className="overflow-hidden">
-            <nav className="mt-1 flex flex-col gap-1 rounded-2xl border border-ink/10 bg-paper/95 p-3 shadow-[0_10px_30px_rgba(20,22,31,0.12)] backdrop-blur-xl">
+            <nav className="mt-1 flex flex-col gap-1 rounded-2xl border border-ink/10 bg-paper/95 p-3 shadow-[0_10px_30px_rgb(var(--color-ink-rgb)_/_0.12)] backdrop-blur-xl">
               {SECTIONS.map((s) => (
                 <Link
                   key={s.href}

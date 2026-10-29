@@ -174,7 +174,7 @@ function OwnProductsGallery({ locale }: { locale: Locale }) {
                   className="absolute inset-0"
                   style={{
                     backgroundImage:
-                      "linear-gradient(to top, rgba(20,22,31,0.95), rgba(20,22,31,0.4) 45%, rgba(20,22,31,0.05) 75%)",
+                      "linear-gradient(to top, rgb(var(--color-ink-rgb) / 0.95), rgb(var(--color-ink-rgb) / 0.4) 45%, rgb(var(--color-ink-rgb) / 0.05) 75%)",
                   }}
                 />
               </>
@@ -268,7 +268,7 @@ function ModuleCard({ module, locale }: { module: Module; locale: Locale }) {
           setFlipped(true);
         }
       }}
-      className="h-[280px] cursor-pointer [perspective:1200px] focus-visible:outline-none"
+      className="h-[280px] cursor-pointer [perspective:1200px]"
     >
       <div
         className="relative h-full w-full rounded-2xl transition-transform duration-500 [transform-style:preserve-3d]"
@@ -292,7 +292,7 @@ function ModuleCard({ module, locale }: { module: Module; locale: Locale }) {
                 className="absolute inset-0"
                 style={{
                   backgroundImage:
-                    "linear-gradient(to top, rgba(20,22,31,0.9), rgba(20,22,31,0.25) 50%, rgba(20,22,31,0.05) 75%)",
+                    "linear-gradient(to top, rgb(var(--color-ink-rgb) / 0.9), rgb(var(--color-ink-rgb) / 0.25) 50%, rgb(var(--color-ink-rgb) / 0.05) 75%)",
                 }}
               />
               <h4 className="absolute inset-x-0 bottom-0 p-5 text-[17px] font-bold tracking-[-0.01em] text-paper">

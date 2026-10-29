@@ -22,8 +22,9 @@ const HEADING = {
 
 /** Editorial treatment: a giant translucent numeral sits behind each step
  * instead of a diagram — magazine-spread rhythm rather than a product-reveal
- * panel, and a different texture from both the live site's pinned-scroll
- * Método and the first proposal's node-diagram panels. */
+ * panel. Static grid, not pinned horizontal scroll — of the site's
+ * choreographed sections, only Hero and Servicios are GSAP-pinned. Also a
+ * different texture from the first proposal's node-diagram panels. */
 export default function MethodEditorial({ locale }: { locale: Locale }) {
   return (
     <section id="metodo" className="scroll-mt-28 bg-paper px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">

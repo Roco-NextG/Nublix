@@ -212,7 +212,7 @@ function PinnedHero({ locale }: { locale: Locale }) {
           className="absolute inset-0 hidden lg:block"
           style={{
             background:
-              "linear-gradient(to left, rgba(20,22,31,0) 0%, rgba(20,22,31,0.45) 40%, rgba(20,22,31,0.88) 62%, rgba(20,22,31,0.88) 100%)",
+              "linear-gradient(to left, rgb(var(--color-ink-rgb) / 0) 0%, rgb(var(--color-ink-rgb) / 0.45) 40%, rgb(var(--color-ink-rgb) / 0.88) 62%, rgb(var(--color-ink-rgb) / 0.88) 100%)",
           }}
         />
 

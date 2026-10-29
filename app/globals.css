@@ -3,6 +3,11 @@
 :root {
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+  /* Ink's channels, split out for rgb(var(--color-ink-rgb) / alpha) —
+     every scrim/shadow/gradient that needs ink at a specific opacity
+     reads this instead of retyping "20, 22, 31" as a literal; keeps a
+     palette change to one line instead of a find-and-replace. */
+  --color-ink-rgb: 20, 22, 31;
 }
 
 @theme {
@@ -125,16 +130,16 @@ html.lenis body {
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   box-shadow:
-    0 10px 30px rgba(20, 22, 31, 0.08),
+    0 10px 30px rgb(var(--color-ink-rgb) / 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .glass-dark {
-  background: rgba(20, 22, 31, 0.92);
+  background: rgb(var(--color-ink-rgb) / 0.92);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   box-shadow:
-    0 10px 30px rgba(20, 22, 31, 0.25),
+    0 10px 30px rgb(var(--color-ink-rgb) / 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
