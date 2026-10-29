@@ -30,7 +30,7 @@ export default function MethodEditorial({ locale }: { locale: Locale }) {
     <section id="metodo" className="scroll-mt-28 bg-paper px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">
       <Reveal>
         <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
-        <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[1.08] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
+        <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
           {HEADING.title[locale]}
         </h2>
       </Reveal>
@@ -45,7 +45,7 @@ export default function MethodEditorial({ locale }: { locale: Locale }) {
               {step.index}
             </span>
             <div className="relative border-t border-dashed border-ink/20 pt-6">
-              <h3 className="text-[26px] leading-[1.08] font-bold tracking-[-0.01em] sm:text-[32px]">
+              <h3 className="text-[26px] leading-[1.2] font-bold tracking-[-0.01em] sm:text-[32px]">
                 {step.title[locale]}
               </h3>
               <TechLabel className="mt-3 text-teal-dim">{step.lead[locale]}</TechLabel>

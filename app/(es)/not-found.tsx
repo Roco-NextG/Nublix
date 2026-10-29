@@ -11,7 +11,7 @@ export default function NotFound() {
     <section className="flex min-h-[70vh] flex-col items-start justify-center bg-paper px-5 pt-36 pb-24 text-ink sm:px-8 sm:pt-44 sm:pb-32 lg:px-16">
       <Reveal>
         <Eyebrow>404</Eyebrow>
-        <h1 className="mt-5 max-w-[18ch] text-[clamp(2.25rem,5vw,4rem)] leading-[1.08] font-bold tracking-[-0.02em]">
+        <h1 className="mt-5 max-w-[18ch] text-[clamp(2.25rem,5vw,4rem)] leading-[1.2] font-bold tracking-[-0.02em]">
           Esta página <span className="text-teal">no existe.</span>
         </h1>
         <p className="mt-6 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">

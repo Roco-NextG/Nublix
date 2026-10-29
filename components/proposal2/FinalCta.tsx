@@ -30,7 +30,7 @@ export default function FinalCta({ locale }: { locale: Locale }) {
         <TechLabel dot className="text-paper/50">
           {COPY.label[locale]}
         </TechLabel>
-        <h2 className="mt-5 max-w-[16ch] text-[38px] leading-[1.08] font-bold tracking-[-0.02em] sm:text-[56px] lg:text-[64px]">
+        <h2 className="mt-5 max-w-[16ch] text-[38px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[56px] lg:text-[64px]">
           {COPY.title[locale]}
         </h2>
         <p className="mt-6 max-w-[46ch] text-[16px] leading-relaxed text-paper/60 sm:text-[18px]">

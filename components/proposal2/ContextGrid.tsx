@@ -25,7 +25,7 @@ export default function ContextGrid({ locale }: { locale: Locale }) {
     <section className="bg-paper px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">
       <Reveal>
         <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
-        <h2 className="mt-5 max-w-[14ch] text-[30px] leading-[1.08] font-bold tracking-[-0.02em] sm:text-[38px]">
+        <h2 className="mt-5 max-w-[14ch] text-[30px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[38px]">
           {HEADING.title[locale]}
         </h2>
       </Reveal>
