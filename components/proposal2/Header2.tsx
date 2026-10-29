@@ -20,9 +20,12 @@ import { CONTACT_PATH, HOME_PATH, SECTIONS, UI, alternatePath, localeFromPathnam
  * scrolls past — tracked via IntersectionObserver rather than a scroll-
  * position threshold, so it stays correct regardless of viewport height.
  * The hero's background is dark there, so while it's in view the pill also
- * swaps to .glass-dark + the paper-on-ink NodeMark/text — the near-
- * transparent .glass-light surface (tuned for the paper page background)
- * would read as illegible ink-on-dark otherwise.
+ * swaps to .glass-dark + the paper-on-ink NodeMark/text — the paper-tinted
+ * .glass-light surface would read as illegible ink-on-dark otherwise. Both
+ * glass variants are opaque enough (92%) to stay legible regardless of
+ * what scrolls underneath the fixed pill, since content routinely reaches
+ * the very top of the viewport (FAQ cards, service cards) — blur alone
+ * isn't a reliable separator across browsers/devices.
  *
  * Mounted once from each locale's root layout — it reads the locale from
  * the current pathname (/en/* vs everything else) rather than taking a

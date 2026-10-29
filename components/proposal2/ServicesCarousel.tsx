@@ -67,18 +67,20 @@ function ServiceCard({
 
       <div className="relative">
         <TechLabel className={tone.sub}>{service.index}</TechLabel>
-        <h3 className={`mt-3 max-w-[14ch] text-[19px] leading-[1.1] font-bold tracking-[-0.01em] sm:text-[21px] ${tone.text}`}>
+        <h3
+          className={`mt-3 line-clamp-4 text-[19px] leading-[1.15] font-bold tracking-[-0.01em] sm:text-[21px] ${tone.text}`}
+        >
           {service.title[locale]}
         </h3>
       </div>
 
-      <div className="relative flex flex-1 items-center justify-center py-4">
-        <span className={`absolute h-[96px] w-[96px] rounded-full ${tone.circle}`} />
+      <div className="relative flex min-h-[72px] flex-1 items-center justify-center py-2">
+        <span className={`absolute h-[72px] w-[72px] rounded-full ${tone.circle}`} />
         <Image
           src={`/brand/icons/${service.icon}.svg`}
           alt=""
-          width={44}
-          height={44}
+          width={34}
+          height={34}
           className="relative"
         />
       </div>

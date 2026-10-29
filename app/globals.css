@@ -121,7 +121,7 @@ html.lenis body {
    dark variant for the few moments something needs to read as glass over
    ink (the header while the dark hero is in view). */
 .glass-light {
-  background: rgba(20, 22, 31, 0.045);
+  background: rgba(246, 244, 239, 0.92);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   box-shadow:
