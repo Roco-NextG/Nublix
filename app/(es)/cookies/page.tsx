@@ -26,7 +26,7 @@ export default function CookiesPage() {
           Política de <span className="text-teal">cookies.</span>
         </h1>
         <p className="mt-6 max-w-[60ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-          Última actualización: 18 de octubre de 2026. Corta y directa, como el resto de la web.
+          Última actualización: 31 de octubre de 2026. Corta y directa, como el resto de la web.
         </p>
       </Reveal>
 
@@ -47,21 +47,30 @@ export default function CookiesPage() {
               Qué cookies usa esta web ahora mismo
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
-              Usamos Microsoft Clarity para entender cómo navegáis por la web: graba sesiones de
-              forma agregada y genera mapas de calor de clics y scroll, para que podamos ver qué
-              funciona y qué no. Clarity no se activa hasta que lo aceptéis en el aviso que veis
-              al llegar a la web; si lo rechazáis, no se carga ni guarda ninguna cookie suya. Si lo
-              aceptáis, guarda cookies en tu navegador que lo reconocen como visitante entre
-              páginas y visitas. No usamos Google Analytics ni píxeles de publicidad, y no
-              vendemos estos datos a nadie. Puedes leer el detalle de las cookies de Clarity y
-              cómo las trata Microsoft en su{" "}
+              Usamos Microsoft Clarity y Google Analytics para entender cómo navegáis por la web:
+              sesiones agregadas, mapas de calor de clics y scroll, y estadísticas de qué páginas
+              visitáis y desde dónde llegáis, para que podamos ver qué funciona y qué no. Ninguna
+              de las dos se activa hasta que lo aceptéis en el aviso que veis al llegar a la web;
+              si lo rechazáis, no se carga ni guarda ninguna de sus cookies. Si lo aceptáis, ambas
+              guardan cookies en tu navegador que lo reconocen como visitante entre páginas y
+              visitas. No usamos píxeles de publicidad, y no vendemos estos datos a nadie. Puedes
+              leer el detalle de cómo tratan los datos en el{" "}
               <a
                 href="https://clarity.microsoft.com/legal/privacy-notice"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-dim underline underline-offset-2"
               >
-                aviso de privacidad
+                aviso de privacidad de Clarity
+              </a>{" "}
+              y la{" "}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-dim underline underline-offset-2"
+              >
+                política de privacidad de Google
               </a>
               . Aparte de esto, tu navegador puede guardar cosas técnicas básicas para que la web
               funcione (por ejemplo, recordar que el menú está abierto mientras navegas), que
@@ -98,8 +107,8 @@ export default function CookiesPage() {
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               Escríbenos a{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>{" "}
               y te respondemos nosotros, no un formulario automático. También puedes leer nuestra{" "}
               <Link href={PRIVACY_PATH.es} className="text-teal-dim underline underline-offset-2">

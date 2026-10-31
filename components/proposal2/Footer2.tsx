@@ -76,10 +76,10 @@ export default function Footer2() {
             <ul className="mt-5 flex flex-col gap-3">
               <li>
                 <a
-                  href="mailto:hola@nublix.com"
+                  href="mailto:info@nublix.es"
                   className="text-[15px] text-ink/65 transition-colors hover:text-ink"
                 >
-                  hola@nublix.com
+                  info@nublix.es
                 </a>
               </li>
               <li className="flex items-center gap-2 text-[15px] text-ink/65">

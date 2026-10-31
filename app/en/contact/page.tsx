@@ -104,10 +104,10 @@ export default function ContactPage() {
             ))}
           </ul>
           <a
-            href="mailto:hola@nublix.com"
+            href="mailto:info@nublix.es"
             className="mt-8 inline-flex items-center gap-3 rounded-full bg-teal px-6 py-3 text-[14px] font-semibold text-ink transition-colors duration-150 ease-out hover:bg-teal-dim active:scale-[0.98]"
           >
-            hola@nublix.com
+            info@nublix.es
             <span aria-hidden="true">↗</span>
           </a>
         </Reveal>

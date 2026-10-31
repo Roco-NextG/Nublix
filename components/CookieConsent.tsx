@@ -8,16 +8,18 @@ import { COOKIES_PATH, UI, localeFromPathname } from "@/lib/i18n";
 import { useCookieConsent } from "@/lib/useCookieConsent";
 
 const CLARITY_PROJECT_ID = "yz4qbq3psl";
+const GA_MEASUREMENT_ID = "G-47HZM8R750";
 
-/** Microsoft Clarity (session recordings, heatmaps) loads only once the
- * visitor accepts — not on mount — since it sets its own tracking
- * cookies. The banner and the script-gating logic live in one component
- * rather than two kept in sync, so there's no separate event/context
- * needed to tell the script loader "the visitor just clicked accept."
- * Consent itself is read via useCookieConsent (useSyncExternalStore over
- * localStorage, same pattern as usePrefersReducedMotion) rather than
- * useState+useEffect, so there's no synchronous setState-in-effect and no
- * hand-rolled hydration-mismatch guard. */
+/** Microsoft Clarity (session recordings, heatmaps) and Google Analytics
+ * (gtag.js) both load only once the visitor accepts — not on mount —
+ * since both set their own tracking cookies. The banner and the
+ * script-gating logic live in one component rather than two kept in
+ * sync, so there's no separate event/context needed to tell the script
+ * loader "the visitor just clicked accept." Consent itself is read via
+ * useCookieConsent (useSyncExternalStore over localStorage, same pattern
+ * as usePrefersReducedMotion) rather than useState+useEffect, so there's
+ * no synchronous setState-in-effect and no hand-rolled hydration-mismatch
+ * guard. */
 export default function CookieConsent() {
   const pathname = usePathname();
   const locale = localeFromPathname(pathname);
@@ -26,13 +28,26 @@ export default function CookieConsent() {
   return (
     <>
       {consent === "accepted" ? (
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`(function(c,l,a,r,i,t,y){
+        <>
+          <Script id="microsoft-clarity" strategy="afterInteractive">
+            {`(function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");`}
-        </Script>
+          </Script>
+          <Script
+            id="google-tag-loader"
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          />
+          <Script id="google-tag-init" strategy="afterInteractive">
+            {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');`}
+          </Script>
+        </>
       ) : null}
 
       {consent === "pending" ? (

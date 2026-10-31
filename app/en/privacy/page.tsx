@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           Privacy <span className="text-teal">policy.</span>
         </h1>
         <p className="mt-6 max-w-[60ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-          Last updated October 13, 2026. Here is what we do with the data you send us, in plain
+          Last updated October 31, 2026. Here is what we do with the data you send us, in plain
           language.
         </p>
       </Reveal>
@@ -39,8 +39,8 @@ export default function PrivacyPage() {
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               Nublix Digital Solutions, S.L., based in Barcelona. You can write to us at{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>{" "}
               with any question about this policy or your data.
             </p>
@@ -53,12 +53,13 @@ export default function PrivacyPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               This site doesn&apos;t have a form that collects data automatically. The only moment you
               share information with us is when you write to{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>{" "}
               yourself: your name, your email address, and whatever you tell us in the message. We
-              don&apos;t collect anything beyond that, and this site uses no analytics or tracking
-              cookies (see the detail in our{" "}
+              don&apos;t collect anything beyond that directly. If you accept the cookie notice,
+              we also use Microsoft Clarity and Google Analytics to understand how you navigate
+              the site (see the detail in our{" "}
               <Link href={COOKIES_PATH.en} className="text-teal-dim underline underline-offset-2">
                 cookie policy
               </Link>
@@ -106,8 +107,8 @@ export default function PrivacyPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               You can ask us to access, correct, or delete your data, limit how we use it, get a
               copy of it, or object to our processing it. Write to{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>{" "}
               and we&apos;ll sort it out directly with you, no middlemen. If you&apos;re not satisfied, you
               can also file a complaint with Spain&apos;s data protection authority (the AEPD).

@@ -26,7 +26,7 @@ export default function CookiesPage() {
           Cookie <span className="text-teal">policy.</span>
         </h1>
         <p className="mt-6 max-w-[60ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-          Last updated October 18, 2026. Short and direct, like the rest of the site.
+          Last updated October 31, 2026. Short and direct, like the rest of the site.
         </p>
       </Reveal>
 
@@ -47,21 +47,30 @@ export default function CookiesPage() {
               What cookies this site uses right now
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
-              We use Microsoft Clarity to understand how you navigate the site: it records
-              sessions in aggregate and generates click and scroll heatmaps, so we can see what
-              works and what doesn&apos;t. Clarity doesn&apos;t activate until you accept it in the
-              banner you see when you arrive; if you decline, nothing loads and no cookie of its
-              is saved. If you accept, it saves cookies in your browser that recognize it as a
-              visitor across pages and visits. We don&apos;t use Google Analytics or advertising
-              pixels, and we don&apos;t sell this data to anyone. You can read the detail on
-              Clarity&apos;s cookies and how Microsoft handles them in its{" "}
+              We use Microsoft Clarity and Google Analytics to understand how you navigate the
+              site: aggregate sessions, click and scroll heatmaps, and stats on which pages you
+              visit and where you came from, so we can see what works and what doesn&apos;t.
+              Neither activates until you accept it in the banner you see when you arrive; if you
+              decline, nothing loads and no cookie of theirs is saved. If you accept, both save
+              cookies in your browser that recognize it as a visitor across pages and visits. We
+              don&apos;t use advertising pixels, and we don&apos;t sell this data to anyone. You
+              can read the detail on how each handles data in{" "}
               <a
                 href="https://clarity.microsoft.com/legal/privacy-notice"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-dim underline underline-offset-2"
               >
-                privacy notice
+                Clarity&apos;s privacy notice
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-dim underline underline-offset-2"
+              >
+                Google&apos;s privacy policy
               </a>
               . Beyond this, your browser may save a few basic technical things so the site works
               properly (keeping the menu&apos;s open state while you navigate, for example), which
@@ -95,8 +104,8 @@ export default function CookiesPage() {
             <h2 className="text-[20px] font-bold tracking-[-0.01em] sm:text-[22px]">Questions</h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               Write to{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>{" "}
               and you&apos;ll hear back from us, not an automated form. You can also read our{" "}
               <Link href={PRIVACY_PATH.en} className="text-teal-dim underline underline-offset-2">

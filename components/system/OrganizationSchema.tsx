@@ -13,7 +13,7 @@ export default function OrganizationSchema() {
     legalName: "Nublix Digital Solutions, S.L.",
     url: SITE_URL,
     logo: `${SITE_URL}/icon.svg`,
-    email: "hola@nublix.com",
+    email: "info@nublix.es",
     areaServed: {
       "@type": "City",
       name: "Barcelona",

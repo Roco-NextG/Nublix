@@ -69,8 +69,8 @@ export const UI = {
   footerPrivacyLink: { es: "Privacidad", en: "Privacy" },
   footerCookiesLink: { es: "Cookies", en: "Cookies" },
   cookieBannerText: {
-    es: "Usamos Microsoft Clarity para entender cómo navegáis por la web (sesiones agregadas, mapas de calor de clics y scroll). No se activa hasta que lo aceptéis.",
-    en: "We use Microsoft Clarity to understand how you use the site (aggregate sessions, click and scroll heatmaps). It doesn't activate until you accept.",
+    es: "Usamos Microsoft Clarity y Google Analytics para entender cómo navegáis por la web (sesiones agregadas, mapas de calor de clics y scroll). No se activan hasta que lo aceptéis.",
+    en: "We use Microsoft Clarity and Google Analytics to understand how you use the site (aggregate sessions, click and scroll heatmaps). They don't activate until you accept.",
   },
   cookieBannerLearnMore: { es: "Más información", en: "Learn more" },
   cookieBannerReject: { es: "Rechazar", en: "Decline" },
@@ -121,8 +121,8 @@ export const METADATA = {
       en: "Cookie Policy | Nublix",
     },
     description: {
-      es: "Qué cookies usa este sitio web de Nublix, incluida Microsoft Clarity, y para qué sirven.",
-      en: "What cookies this Nublix website uses, including Microsoft Clarity, and what they're for.",
+      es: "Qué cookies usa este sitio web de Nublix, incluidas Microsoft Clarity y Google Analytics, y para qué sirven.",
+      en: "What cookies this Nublix website uses, including Microsoft Clarity and Google Analytics, and what they're for.",
     },
   },
 } as const;

@@ -26,7 +26,7 @@ export default function PrivacidadPage() {
           Política de <span className="text-teal">privacidad.</span>
         </h1>
         <p className="mt-6 max-w-[60ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-          Última actualización: 13 de octubre de 2026. Aquí explicamos, en términos claros, qué
+          Última actualización: 31 de octubre de 2026. Aquí explicamos, en términos claros, qué
           hacemos con los datos que nos enviáis.
         </p>
       </Reveal>
@@ -39,8 +39,8 @@ export default function PrivacidadPage() {
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               Nublix Digital Solutions, S.L., con sede en Barcelona. Puedes escribirnos a{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>{" "}
               para cualquier duda sobre esta política o sobre tus datos.
             </p>
@@ -53,12 +53,13 @@ export default function PrivacidadPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               Esta web no tiene un formulario que recoja datos automáticamente. El único momento en
               el que compartes información con nosotros es cuando nos escribes por tu cuenta a{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>
               : tu nombre, tu dirección de email y lo que nos cuentes en el mensaje. No recogemos
-              nada más, y no usamos cookies de analítica ni de seguimiento en este sitio (puedes
-              leer el detalle en nuestra{" "}
+              nada más directamente. Si aceptáis el aviso de cookies, también usamos Microsoft
+              Clarity y Google Analytics para entender cómo navegáis por la web (puedes leer el
+              detalle en nuestra{" "}
               <Link href={COOKIES_PATH.es} className="text-teal-dim underline underline-offset-2">
                 política de cookies
               </Link>
@@ -108,8 +109,8 @@ export default function PrivacidadPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-ink/70">
               Puedes pedirnos acceder a tus datos, corregirlos, borrarlos, limitarnos su uso,
               pedirnos una copia o oponerte a que los tratemos. Escríbenos a{" "}
-              <a href="mailto:hola@nublix.com" className="text-teal-dim underline underline-offset-2">
-                hola@nublix.com
+              <a href="mailto:info@nublix.es" className="text-teal-dim underline underline-offset-2">
+                info@nublix.es
               </a>{" "}
               y lo resolvemos directamente contigo, sin intermediarios. Si no quedas satisfecho,
               también puedes reclamar ante la Agencia Española de Protección de Datos (AEPD).

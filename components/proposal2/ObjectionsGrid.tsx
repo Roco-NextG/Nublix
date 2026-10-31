@@ -84,7 +84,7 @@ export default function ObjectionsGrid({ locale }: { locale: Locale }) {
         ))}
 
         <a
-          href="mailto:hola@nublix.com"
+          href="mailto:info@nublix.es"
           className="group flex items-center justify-between gap-4 rounded-2xl border border-dashed border-ink/20 px-6 py-6 transition-colors duration-200 hover:border-ink/40 sm:col-span-2"
         >
           <span className="text-[16px] leading-snug font-medium tracking-[-0.01em] text-ink/70 sm:text-[18px]">

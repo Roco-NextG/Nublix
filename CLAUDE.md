@@ -88,4 +88,4 @@ Mucho movimiento, pero disciplinado: **un momento coreografiado por sección**, 
 - **CTA primario:** "Cuéntanos tu proceso"
 - **CTA secundario:** "Ver el método"
 - **Claim alternativo disponible:** "BUILT AROUND YOUR BUSINESS." / "YOUR BUSINESS. YOUR SYSTEM." / "LESS MANUAL. MORE SYSTEM." — no usado todavía, candidatos para variantes de copy.
-- **Email de contacto:** `hola@nublix.com` — **placeholder**, confirmar el real.
+- **Email de contacto:** `info@nublix.es` — confirmado.
