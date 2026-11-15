@@ -95,22 +95,6 @@ export const SERVICES: LocalizedService[] = [
   },
   {
     index: "04",
-    icon: "cloud",
-    title: {
-      es: "Despliegue y puesta en marcha de hosting y bases de datos",
-      en: "Deployment and rollout of hosting and databases",
-    },
-    description: {
-      es: "Alojamos y mantenemos lo que construimos. Sin servidores que gestionar ni sustos de última hora.",
-      en: "We host and maintain what we build. No servers to manage, no last-minute surprises.",
-    },
-    detail: {
-      es: "Nos encargamos del alojamiento, las copias de seguridad y las actualizaciones de lo que construimos. Vosotros no tenéis que contratar a nadie para mantenerlo en marcha.",
-      en: "We take care of hosting, backups, and updates for everything we build. You don't need to hire anyone to keep it running.",
-    },
-  },
-  {
-    index: "05",
     icon: "pagos",
     title: { es: "Integración de sistemas y módulos de pago", en: "Integration of payment systems and modules" },
     description: {
@@ -123,7 +107,7 @@ export const SERVICES: LocalizedService[] = [
     },
   },
   {
-    index: "06",
+    index: "05",
     icon: "iot",
     title: { es: "Sensórica e IoT para industria", en: "Sensors and IoT for industry" },
     description: {

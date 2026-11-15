@@ -72,9 +72,9 @@ Mucho movimiento, pero disciplinado: **un momento coreografiado por sección**, 
 - Contenido compartido (pasos, servicios, promesas, nav) centralizado en `lib/content.ts` — no duplicar copy entre la versión teaser (Home) y la versión completa (página dedicada)
 
 ## Estructura del sitio (multi-página, no solo landing)
-- `/` — Home aligerado: Hero, teaser de Método (4 filas + link), teaser de Servicios (4 de 6 + link), FAQ (6 preguntas reales, sin cifras inventadas), CTA final.
+- `/` — Home aligerado: Hero, teaser de Método (4 filas + link), teaser de Servicios (4 de 5 + link), FAQ (6 preguntas reales, sin cifras inventadas), CTA final.
 - `/metodo` — PageHero + los 4 pasos completos (scroll horizontal pineado, copy extendido) + CTA.
-- `/servicios` — PageHero + los 6 servicios completos (`EditorialAccordion`) + CTA.
+- `/servicios` — PageHero + los 5 servicios completos (`EditorialAccordion`) + CTA.
 - `/nosotros` — PageHero + por qué existe Nublix + 4 principios + CTA. Sin nombres/fotos inventados de los 3 socios — se describen en colectivo.
 - `/contacto` — PageHero + "Nublix Diagnostic" (4 pasos del proceso de contacto) + email directo.
 - Header (flotante, fijo en todas las páginas) + Footer, compartidos vía `app/layout.tsx`.

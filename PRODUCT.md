@@ -29,7 +29,7 @@ El Método Nublix (proceso real de cada proyecto, no decorativo):
 
 ## Capabilities and Constraints
 
-- Servicios: paneles/herramientas internas, automatización de procesos, integraciones y conexión de datos, webs y apps a medida, cloud e infraestructura gestionada, y evolución modular del software con la empresa.
+- Servicios: paneles/herramientas internas, automatización de procesos, integraciones y conexión de datos, webs y apps a medida, y evolución modular del software con la empresa.
 - El sitio es multi-página (no solo landing): Home, Método, Servicios, Nosotros, Contacto — ver `CLAUDE.md` para la estructura técnica detallada.
 - **Accesibilidad:** sin estándar formal exigido (confirmado en la entrevista de init) — se siguen buenas prácticas estándar: contraste correcto, foco visible en todo elemento interactivo, y respeto estricto de `prefers-reduced-motion` con fallback estático.
 - **Email de contacto:** `info@nublix.es`, confirmado.

@@ -29,12 +29,12 @@ const HEADING = {
   title: {
     es: (
       <>
-        Seis piezas. <span className="text-teal">Un mismo sistema.</span>
+        Cinco piezas. <span className="text-teal">Un mismo sistema.</span>
       </>
     ),
     en: (
       <>
-        Six pieces. <span className="text-teal">One system.</span>
+        Five pieces. <span className="text-teal">One system.</span>
       </>
     ),
   },
