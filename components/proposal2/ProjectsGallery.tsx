@@ -216,19 +216,34 @@ function OwnProductsGallery({ locale }: { locale: Locale }) {
               </div>
 
               <div
-                className={`absolute bottom-5 left-1/2 -translate-x-1/2 transition-all duration-500 sm:bottom-8 ${
-                  active ? "scale-50 opacity-0" : "opacity-100 delay-300"
+                className={`absolute inset-x-3 bottom-5 transition-all duration-500 sm:inset-x-5 sm:bottom-8 ${
+                  active ? "scale-95 opacity-0" : "opacity-100 delay-300"
                 }`}
               >
-                <span
-                  className={`hidden text-[13px] font-medium tracking-[0.1em] uppercase [writing-mode:vertical-rl] sm:block ${
-                    lightText ? "text-paper/70" : "text-ink/55"
+                <div
+                  className={`hidden rounded-xl px-3 py-2.5 backdrop-blur-sm sm:block ${
+                    lightText ? "bg-ink/25" : "bg-paper/40"
                   }`}
                 >
-                  {project.title}
-                </span>
+                  <span
+                    className={`block text-[13px] font-bold tracking-[-0.01em] ${
+                      lightText ? "text-paper" : "text-ink"
+                    }`}
+                  >
+                    {project.title}
+                  </span>
+                  <span
+                    className={`mt-1 block text-[12px] leading-snug ${
+                      lightText ? "text-paper/70" : "text-ink/65"
+                    }`}
+                  >
+                    {project.objective[locale]}
+                  </span>
+                </div>
                 <span
-                  className={`block font-mono text-[12px] sm:hidden ${lightText ? "text-paper/60" : "text-ink/50"}`}
+                  className={`block text-center font-mono text-[12px] sm:hidden ${
+                    lightText ? "text-paper/60" : "text-ink/50"
+                  }`}
                 >
                   {project.id}
                 </span>
