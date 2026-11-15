@@ -23,7 +23,7 @@ const PROJECTS: Project[] = [
     title: "Coach AI",
     category: { es: "SaaS", en: "SaaS" },
     objective: { es: "Integración con Telegram.", en: "Telegram integration." },
-    tone: "ink",
+    tone: "mint",
     image: "/projects/coach-ai.png",
   },
   {
@@ -140,7 +140,7 @@ function OwnProductsGallery({ locale }: { locale: Locale }) {
       {PROJECTS.map((project) => {
         const active = activeId === project.id;
         const dark = project.tone === "ink";
-        const lightText = dark || Boolean(project.image);
+        const lightText = dark;
         return (
           <div
             key={project.id}
@@ -173,8 +173,9 @@ function OwnProductsGallery({ locale }: { locale: Locale }) {
                   aria-hidden="true"
                   className="absolute inset-0"
                   style={{
-                    backgroundImage:
-                      "linear-gradient(to top, rgb(var(--color-ink-rgb) / 0.95), rgb(var(--color-ink-rgb) / 0.4) 45%, rgb(var(--color-ink-rgb) / 0.05) 75%)",
+                    backgroundImage: dark
+                      ? "linear-gradient(to top, rgb(var(--color-ink-rgb) / 0.95), rgb(var(--color-ink-rgb) / 0.4) 45%, rgb(var(--color-ink-rgb) / 0.05) 75%)"
+                      : "linear-gradient(to top, rgb(var(--color-paper-rgb) / 0.95), rgb(var(--color-paper-rgb) / 0.4) 45%, rgb(var(--color-paper-rgb) / 0.05) 75%)",
                   }}
                 />
               </>
@@ -220,11 +221,7 @@ function OwnProductsGallery({ locale }: { locale: Locale }) {
                   active ? "scale-95 opacity-0" : "opacity-100 delay-300"
                 }`}
               >
-                <div
-                  className={`hidden rounded-xl px-3 py-2.5 backdrop-blur-sm sm:block ${
-                    lightText ? "bg-ink/25" : "bg-paper/40"
-                  }`}
-                >
+                <div className="hidden sm:block">
                   <span
                     className={`block text-[13px] font-bold tracking-[-0.01em] ${
                       lightText ? "text-paper" : "text-ink"

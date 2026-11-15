@@ -8,6 +8,10 @@
      reads this instead of retyping "20, 22, 31" as a literal; keeps a
      palette change to one line instead of a find-and-replace. */
   --color-ink-rgb: 20, 22, 31;
+  /* Paper's channels, same purpose as --color-ink-rgb above — for photo
+     scrims that need to lighten toward a light-background screenshot
+     instead of darkening toward a dark one. */
+  --color-paper-rgb: 246, 244, 239;
 }
 
 @theme {
