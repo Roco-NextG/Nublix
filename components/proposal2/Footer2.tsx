@@ -109,10 +109,10 @@ export default function Footer2() {
         </div>
       </div>
 
-      <div className="mt-10 sm:mt-14">
+      <div className="mx-auto mt-10 max-w-[1440px] px-5 sm:mt-14 sm:px-8">
         <span
           aria-hidden="true"
-          className="block pl-4 text-[22vw] leading-[0.8] font-extrabold tracking-[-0.04em] text-ink select-none sm:pl-6 sm:text-[200px] lg:text-[260px]"
+          className="block text-[22vw] leading-[0.8] font-extrabold tracking-[-0.04em] text-ink select-none sm:text-[200px] lg:text-[260px]"
         >
           nublix
         </span>

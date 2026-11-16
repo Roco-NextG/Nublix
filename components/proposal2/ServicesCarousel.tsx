@@ -104,10 +104,12 @@ function StaticServices({ locale }: { locale: Locale }) {
           {HEADING.title[locale]}
         </h2>
       </div>
-      <div className="mt-10 flex gap-3 overflow-x-auto px-5 pb-4 sm:gap-4 sm:px-8 lg:px-16">
-        {SERVICES.map((service, i) => (
-          <ServiceCard key={service.index} service={service} index={i} locale={locale} />
-        ))}
+      <div className="mx-auto mt-10 max-w-[1440px]">
+        <div className="flex gap-3 overflow-x-auto px-5 pb-4 sm:gap-4 sm:px-8 lg:px-16">
+          {SERVICES.map((service, i) => (
+            <ServiceCard key={service.index} service={service} index={i} locale={locale} />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -160,14 +162,16 @@ function PinnedServices({ locale }: { locale: Locale }) {
             </h2>
           </div>
 
-          <div
-            ref={trackRef}
-            className="mt-10 flex flex-1 items-center gap-3 pl-5 will-change-transform sm:gap-4 sm:pl-8 lg:pl-16"
-          >
-            {SERVICES.map((service, i) => (
-              <ServiceCard key={service.index} service={service} index={i} locale={locale} />
-            ))}
-            <div aria-hidden="true" className="w-[5vw] shrink-0 sm:w-[10vw]" />
+          <div className="mx-auto mt-10 w-full max-w-[1440px] flex-1 overflow-visible">
+            <div
+              ref={trackRef}
+              className="flex h-full items-center gap-3 pl-5 will-change-transform sm:gap-4 sm:pl-8 lg:pl-16"
+            >
+              {SERVICES.map((service, i) => (
+                <ServiceCard key={service.index} service={service} index={i} locale={locale} />
+              ))}
+              <div aria-hidden="true" className="w-[5vw] shrink-0 sm:w-[10vw]" />
+            </div>
           </div>
 
           <div className="mx-auto mt-8 flex w-full max-w-[1440px] items-center gap-4 px-5 sm:px-8 lg:px-16">
