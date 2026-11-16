@@ -23,7 +23,7 @@ const HEADING = {
 export default function ContextGrid({ locale }: { locale: Locale }) {
   return (
     <section className="bg-paper py-16 text-ink sm:py-24">
-      <div className="max-w-[1440px] px-5 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <Reveal>
           <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
           <h2 className="mt-5 max-w-[14ch] text-[30px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[38px]">

@@ -52,7 +52,7 @@ const STEPS = [
 export default function ContactoPage() {
   return (
     <section className="bg-paper pt-36 pb-24 text-ink sm:pt-44 sm:pb-32">
-      <div className="max-w-[1440px] px-5 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <Reveal>
           <Eyebrow>Contacto</Eyebrow>
           <h1 className="mt-5 max-w-[16ch] text-[clamp(2.25rem,5vw,4rem)] leading-[1.2] font-bold tracking-[-0.02em]">
