@@ -98,7 +98,7 @@ function ServiceCard({
 function StaticServices({ locale }: { locale: Locale }) {
   return (
     <section id="servicios" className="scroll-mt-28 bg-paper py-16 text-ink sm:py-24">
-      <div className="px-5 sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
         <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
           {HEADING.title[locale]}
@@ -153,7 +153,7 @@ function PinnedServices({ locale }: { locale: Locale }) {
     <section id="servicios" className="scroll-mt-28 bg-paper">
       <div ref={wrapperRef} className="relative h-screen overflow-hidden">
         <div className="flex h-full flex-col pt-16 pb-10 sm:pt-20">
-          <div className="px-5 sm:px-8 lg:px-16">
+          <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
             <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
             <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
               {HEADING.title[locale]}
@@ -170,7 +170,7 @@ function PinnedServices({ locale }: { locale: Locale }) {
             <div aria-hidden="true" className="w-[5vw] shrink-0 sm:w-[10vw]" />
           </div>
 
-          <div className="mt-8 flex items-center gap-4 px-5 sm:px-8 lg:px-16">
+          <div className="mx-auto mt-8 flex w-full max-w-[1440px] items-center gap-4 px-5 sm:px-8 lg:px-16">
             <span className="font-mono text-[12px] tracking-[0.04em] text-ink/40">
               {String(Math.min(total, Math.ceil(progress * total) || 1)).padStart(2, "0")} /{" "}
               {String(total).padStart(2, "0")}

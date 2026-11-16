@@ -25,21 +25,23 @@ const COPY = {
 
 export default function FinalCta({ locale }: { locale: Locale }) {
   return (
-    <section className="border-t border-dashed border-paper/15 bg-ink px-5 py-28 text-paper sm:px-8 lg:px-16">
-      <Reveal>
-        <TechLabel dot className="text-paper/50">
-          {COPY.label[locale]}
-        </TechLabel>
-        <h2 className="mt-5 max-w-[16ch] text-[38px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[56px] lg:text-[64px]">
-          {COPY.title[locale]}
-        </h2>
-        <p className="mt-6 max-w-[46ch] text-[16px] leading-relaxed text-paper/60 sm:text-[18px]">
-          {COPY.body[locale]}
-        </p>
-        <div className="mt-9 flex flex-wrap items-center gap-4">
-          <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
-        </div>
-      </Reveal>
+    <section className="border-t border-dashed border-paper/15 bg-ink py-28 text-paper">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
+        <Reveal>
+          <TechLabel dot className="text-paper/50">
+            {COPY.label[locale]}
+          </TechLabel>
+          <h2 className="mt-5 max-w-[16ch] text-[38px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[56px] lg:text-[64px]">
+            {COPY.title[locale]}
+          </h2>
+          <p className="mt-6 max-w-[46ch] text-[16px] leading-relaxed text-paper/60 sm:text-[18px]">
+            {COPY.body[locale]}
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }

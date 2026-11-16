@@ -19,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
-    <section className="bg-paper px-5 pt-36 pb-24 text-ink sm:px-8 sm:pt-44 sm:pb-32 lg:px-16">
+    <section className="bg-paper pt-36 pb-24 text-ink sm:pt-44 sm:pb-32">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
       <Reveal>
         <Eyebrow>Cookies</Eyebrow>
         <h1 className="mt-5 max-w-[20ch] text-[clamp(2.25rem,4.5vw,3.25rem)] leading-[1.2] font-bold tracking-[-0.02em]">
@@ -116,6 +117,7 @@ export default function CookiesPage() {
           </div>
         </div>
       </Reveal>
+      </div>
     </section>
   );
 }

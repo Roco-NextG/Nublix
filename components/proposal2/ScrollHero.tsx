@@ -119,43 +119,45 @@ function frameOpacity(progress: number, index: number, total: number) {
  * search engines read as the page's primary heading. */
 function StaticHero({ locale }: { locale: Locale }) {
   return (
-    <section id="hero" className="bg-paper px-5 pt-28 pb-20 sm:px-8 lg:px-16">
-      <div className="flex flex-col gap-16">
-        {FRAMES.map((frame, i) => {
-          const HeadingTag = i === 0 ? "h1" : "h2";
-          return (
-            <div
-              key={frame.tag.es}
-              className="flex flex-col gap-8 border-b border-dashed border-ink/12 pb-16 last:border-b-0 last:pb-0 lg:flex-row lg:items-center lg:justify-between"
-            >
-              <div>
-                <TechLabel className="text-teal-dim">{frame.tag[locale]}</TechLabel>
-                <HeadingTag className="mt-5 max-w-[11ch] text-[36px] leading-[1.2] font-bold tracking-[-0.03em] text-ink sm:text-[52px]">
-                  <Headline title={frame.title[locale]} teal={frame.teal[locale]} />
-                </HeadingTag>
-                <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
-                  {frame.sub[locale]}
-                </p>
-                {frame.cta ? (
-                  <div className="mt-7 flex flex-wrap items-center gap-4">
-                    <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
-                    <Button2
-                      href="#metodo"
-                      variant="ghost"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToHash("#metodo");
-                      }}
-                    >
-                      {UI.secondaryCta[locale]}
-                    </Button2>
-                  </div>
-                ) : null}
+    <section id="hero" className="bg-paper pt-28 pb-20">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
+        <div className="flex flex-col gap-16">
+          {FRAMES.map((frame, i) => {
+            const HeadingTag = i === 0 ? "h1" : "h2";
+            return (
+              <div
+                key={frame.tag.es}
+                className="flex flex-col gap-8 border-b border-dashed border-ink/12 pb-16 last:border-b-0 last:pb-0 lg:flex-row lg:items-center lg:justify-between"
+              >
+                <div>
+                  <TechLabel className="text-teal-dim">{frame.tag[locale]}</TechLabel>
+                  <HeadingTag className="mt-5 max-w-[11ch] text-[36px] leading-[1.2] font-bold tracking-[-0.03em] text-ink sm:text-[52px]">
+                    <Headline title={frame.title[locale]} teal={frame.teal[locale]} />
+                  </HeadingTag>
+                  <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-ink/60 sm:text-[18px]">
+                    {frame.sub[locale]}
+                  </p>
+                  {frame.cta ? (
+                    <div className="mt-7 flex flex-wrap items-center gap-4">
+                      <Button2 href={CONTACT_PATH[locale]}>{UI.primaryCta[locale]}</Button2>
+                      <Button2
+                        href="#metodo"
+                        variant="ghost"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToHash("#metodo");
+                        }}
+                      >
+                        {UI.secondaryCta[locale]}
+                      </Button2>
+                    </div>
+                  ) : null}
+                </div>
+                <FrameDiagram diagram={frame.diagram} className="h-[140px] w-[190px] shrink-0 text-ink/70" />
               </div>
-              <FrameDiagram diagram={frame.diagram} className="h-[140px] w-[190px] shrink-0 text-ink/70" />
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -216,7 +218,7 @@ function PinnedHero({ locale }: { locale: Locale }) {
           }}
         />
 
-        <div className="relative flex h-full flex-col px-5 pt-28 pb-10 sm:px-8 lg:px-16">
+        <div className="relative mx-auto flex h-full max-w-[1440px] flex-col px-5 pt-28 pb-10 sm:px-8 lg:px-16">
           <div className="relative flex flex-1 flex-col gap-10 lg:flex-row lg:items-center lg:justify-start lg:gap-12">
             <div className="relative min-h-[260px] w-full sm:min-h-[300px] lg:min-h-[360px] lg:mr-auto lg:max-w-[40%]">
               {FRAMES.map((frame, i) => {

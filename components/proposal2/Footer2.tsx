@@ -24,7 +24,7 @@ export default function Footer2() {
 
   return (
     <footer className="overflow-hidden border-t border-dashed border-ink/12 bg-paper pt-14 text-ink sm:pt-20">
-      <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8">
         <div className="grid gap-12 sm:grid-cols-[1.3fr_1fr_1fr_1fr] sm:gap-8">
           <div>
             <TechLabel className="text-teal-dim">{UI.footerLead[locale]}</TechLabel>

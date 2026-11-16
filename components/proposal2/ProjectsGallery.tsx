@@ -344,32 +344,34 @@ function ModuleCard({ module, locale }: { module: Module; locale: Locale }) {
 
 export default function ProjectsGallery({ locale }: { locale: Locale }) {
   return (
-    <section id="proyectos" className="scroll-mt-28 bg-paper px-5 py-16 text-ink sm:px-8 sm:py-24 lg:px-16">
-      <Reveal>
-        <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
-        <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
-          {HEADING.title[locale]}
-        </h2>
-        <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">
-          {HEADING.subtitle[locale]}
-        </p>
-      </Reveal>
+    <section id="proyectos" className="scroll-mt-28 bg-paper py-16 text-ink sm:py-24">
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
+        <Reveal>
+          <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
+          <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
+            {HEADING.title[locale]}
+          </h2>
+          <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">
+            {HEADING.subtitle[locale]}
+          </p>
+        </Reveal>
 
-      <Reveal className="mt-14">
-        <TechLabel className="text-teal-dim">{HEADING.customSolution[locale]}</TechLabel>
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {MODULES.map((module) => (
-            <ModuleCard key={module.id} module={module} locale={locale} />
-          ))}
-        </div>
-      </Reveal>
+        <Reveal className="mt-14">
+          <TechLabel className="text-teal-dim">{HEADING.customSolution[locale]}</TechLabel>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {MODULES.map((module) => (
+              <ModuleCard key={module.id} module={module} locale={locale} />
+            ))}
+          </div>
+        </Reveal>
 
-      <Reveal className="mt-16 border-t border-dashed border-ink/12 pt-14">
-        <TechLabel className="text-teal-dim">{HEADING.ownProducts[locale]}</TechLabel>
-        <div className="mt-6">
-          <OwnProductsGallery locale={locale} />
-        </div>
-      </Reveal>
+        <Reveal className="mt-16 border-t border-dashed border-ink/12 pt-14">
+          <TechLabel className="text-teal-dim">{HEADING.ownProducts[locale]}</TechLabel>
+          <div className="mt-6">
+            <OwnProductsGallery locale={locale} />
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }
