@@ -98,13 +98,13 @@ function ServiceCard({
 function StaticServices({ locale }: { locale: Locale }) {
   return (
     <section id="servicios" className="scroll-mt-28 bg-paper py-16 text-ink sm:py-24">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
+      <div className="max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
         <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
           {HEADING.title[locale]}
         </h2>
       </div>
-      <div className="mx-auto mt-10 max-w-[1440px]">
+      <div className="mt-10 max-w-[1440px]">
         <div className="flex gap-3 overflow-x-auto px-5 pb-4 sm:gap-4 sm:px-8 lg:px-16">
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.index} service={service} index={i} locale={locale} />
@@ -155,14 +155,14 @@ function PinnedServices({ locale }: { locale: Locale }) {
     <section id="servicios" className="scroll-mt-28 bg-paper">
       <div ref={wrapperRef} className="relative h-screen overflow-hidden">
         <div className="flex h-full flex-col pt-16 pb-10 sm:pt-20">
-          <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
+          <div className="w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
             <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
             <h2 className="mt-5 max-w-[22ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
               {HEADING.title[locale]}
             </h2>
           </div>
 
-          <div className="mx-auto mt-10 w-full max-w-[1440px] flex-1 overflow-visible">
+          <div className="mt-10 w-full max-w-[1440px] flex-1 overflow-visible">
             <div
               ref={trackRef}
               className="flex h-full items-center gap-3 pl-5 will-change-transform sm:gap-4 sm:pl-8 lg:pl-16"
@@ -174,7 +174,7 @@ function PinnedServices({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          <div className="mx-auto mt-8 flex w-full max-w-[1440px] items-center gap-4 px-5 sm:px-8 lg:px-16">
+          <div className="mt-8 flex w-full max-w-[1440px] items-center gap-4 px-5 sm:px-8 lg:px-16">
             <span className="font-mono text-[12px] tracking-[0.04em] text-ink/40">
               {String(Math.min(total, Math.ceil(progress * total) || 1)).padStart(2, "0")} /{" "}
               {String(total).padStart(2, "0")}

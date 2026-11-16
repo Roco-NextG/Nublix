@@ -6,7 +6,7 @@ import Button2 from "@/components/proposal2/Button2";
 export default function NotFound() {
   return (
     <section className="flex min-h-[70vh] flex-col items-start justify-center bg-paper pt-36 pb-24 text-ink sm:pt-44 sm:pb-32">
-      <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
+      <div className="w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <Reveal>
           <Eyebrow>404</Eyebrow>
           <h1 className="mt-5 max-w-[18ch] text-[clamp(2.25rem,5vw,4rem)] leading-[1.2] font-bold tracking-[-0.02em]">

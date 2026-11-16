@@ -26,7 +26,7 @@ const COPY = {
 export default function FinalCta({ locale }: { locale: Locale }) {
   return (
     <section className="border-t border-dashed border-paper/15 bg-ink py-28 text-paper">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
+      <div className="max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <Reveal>
           <TechLabel dot className="text-paper/50">
             {COPY.label[locale]}

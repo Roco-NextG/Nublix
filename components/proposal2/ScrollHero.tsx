@@ -120,7 +120,7 @@ function frameOpacity(progress: number, index: number, total: number) {
 function StaticHero({ locale }: { locale: Locale }) {
   return (
     <section id="hero" className="bg-paper pt-28 pb-20">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
+      <div className="max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="flex flex-col gap-16">
           {FRAMES.map((frame, i) => {
             const HeadingTag = i === 0 ? "h1" : "h2";
@@ -218,7 +218,7 @@ function PinnedHero({ locale }: { locale: Locale }) {
           }}
         />
 
-        <div className="relative mx-auto flex h-full max-w-[1440px] flex-col px-5 pt-28 pb-10 sm:px-8 lg:px-16">
+        <div className="relative flex h-full max-w-[1440px] flex-col px-5 pt-28 pb-10 sm:px-8 lg:px-16">
           <div className="relative flex flex-1 flex-col gap-10 lg:flex-row lg:items-center lg:justify-start lg:gap-12">
             <div className="relative min-h-[260px] w-full sm:min-h-[300px] lg:min-h-[360px] lg:mr-auto lg:max-w-[40%]">
               {FRAMES.map((frame, i) => {

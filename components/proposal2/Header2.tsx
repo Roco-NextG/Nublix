@@ -92,7 +92,7 @@ export default function Header2() {
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4 sm:top-6 sm:px-6">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="max-w-[1440px]">
         <div className="flex items-center justify-between">
           <div
             className={`flex items-center gap-1 rounded-full pr-2 pl-4 transition-[border-radius,padding,background-color] duration-300 ${

@@ -345,7 +345,7 @@ function ModuleCard({ module, locale }: { module: Module; locale: Locale }) {
 export default function ProjectsGallery({ locale }: { locale: Locale }) {
   return (
     <section id="proyectos" className="scroll-mt-28 bg-paper py-16 text-ink sm:py-24">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-16">
+      <div className="max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <Reveal>
           <Eyebrow>{HEADING.eyebrow[locale]}</Eyebrow>
           <h2 className="mt-5 max-w-[20ch] text-[32px] leading-[1.2] font-bold tracking-[-0.02em] sm:text-[44px] lg:text-[48px]">
